@@ -1,11 +1,12 @@
 import json
+import logging
 import os
 import random
 from datetime import datetime
 from pathlib import Path
 from typing import List, Optional
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request, Depends
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -15,7 +16,18 @@ STORIES = BASE / "stories"
 STATIC = BASE / "static"
 STORIES.mkdir(exist_ok=True)
 
-AUTH_TOKEN = os.environ.get('STORY_API_TOKEN', 'omni-token')
+AUTH_LOG_DIR = Path('/var/log/story-superlong')
+AUTH_LOG_DIR.mkdir(parents=True, exist_ok=True)
+AUTH_LOG_FILE = AUTH_LOG_DIR / 'auth.log'
+AUTH_LOG_FILE.touch(exist_ok=True)
+auth_logger = logging.getLogger('story-superlong-auth')
+if not auth_logger.handlers:
+    handler = logging.FileHandler(AUTH_LOG_FILE)
+    handler.setFormatter(logging.Formatter('%(asctime)s %(levelname)s %(message)s'))
+    auth_logger.addHandler(handler)
+auth_logger.setLevel(logging.WARNING)
+
+AUTH_TOKEN = os.environ.get('STORY_API_TOKEN') or os.environ.get('NEXT_PUBLIC_API_TOKEN') or 'omni-token'
 
 
 app = FastAPI(title="Story VeryLong")
@@ -88,15 +100,17 @@ def summarize_story(chapters: List[str]) -> str:
 
 
 def authorize(request: Request):
+    client_ip = request.client.host if request.client else 'unknown'
     auth_header=request.headers.get('Authorization','')
     if not auth_header.startswith('Bearer '):
+        auth_logger.warning('Unauthorized Story API access from %s (missing Bearer)', client_ip)
         raise HTTPException(status_code=401, detail='Missing bearer token')
     token=auth_header.split(' ',1)[1] if ' ' in auth_header else ''
     if token!=AUTH_TOKEN:
+        auth_logger.warning('Unauthorized Story API access from %s (invalid token)', client_ip)
         raise HTTPException(status_code=403, detail='Invalid token')
 
-@app.post("/api/story", dependencies=[Depends(authorize)])
-, response_model=StoryResponse)
+@app.post("/api/story", dependencies=[Depends(authorize)], response_model=StoryResponse)
 def build_story(pr: StoryRequest):
     slug = f"story-{int(datetime.utcnow().timestamp())}"
     outline = make_outline(pr.title, pr.genre, pr.chapters)
@@ -113,11 +127,7 @@ def build_story(pr: StoryRequest):
     persist_story(response)
     return response
 
-
-@app.get("/stories")
-
-
-@app.post('/api/story/continue', response_model=StoryResponse)
+@app.post('/api/story/continue', dependencies=[Depends(authorize)], response_model=StoryResponse)
 def continue_story(req: StoryContinueRequest):
     story=load_story(req.story_id)
     if not story:
@@ -125,7 +135,7 @@ def continue_story(req: StoryContinueRequest):
     new_outlines=[]
     start=len(story['outline'])+1
     for i in range(start, start+req.chapters):
-        new_outlines.append(f'Chapter {i}: {story['title']} — continuation beat {i}')
+        new_outlines.append(f'Chapter {i}: {story["title"]} — continuation beat {i}')
     new_chapters=[draft_chapter(line, req.tone or story.get('cover','epic')) for line in new_outlines]
     story['outline'].extend(new_outlines)
     story['chapters'].extend(new_chapters)
@@ -135,9 +145,10 @@ def continue_story(req: StoryContinueRequest):
     persist_story(story)
     return story
 
+
+@app.get("/stories")
 def list_stories():
     return [p.stem for p in STORIES.glob("*.json")]
-
 
 @app.get("/")
 def root():

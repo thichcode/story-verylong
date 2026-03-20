@@ -35,7 +35,7 @@ export default function Home() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/story`, {
+    const res = await fetch('/api/story', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),
@@ -54,24 +54,24 @@ export default function Home() {
         <section style={{ display: 'flex', gap: 24, marginTop: 20 }}>
           <form onSubmit={handleSubmit} style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 12 }}>
             <label>Title</label>
-            <input value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
+            <input name="title" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
             <label>Genre</label>
-            <select value={form.genre} onChange={(e) => setForm({ ...form, genre: e.target.value })}>
+            <select name="genre" value={form.genre} onChange={(e) => setForm({ ...form, genre: e.target.value })}>
               <option>Fantasy</option>
               <option>Sci-Fi</option>
               <option>Thriller</option>
               <option>Romance</option>
             </select>
             <label>Tone</label>
-            <select value={form.tone} onChange={(e) => setForm({ ...form, tone: e.target.value })}>
+            <select name="tone" value={form.tone} onChange={(e) => setForm({ ...form, tone: e.target.value })}>
               <option>epic</option>
               <option>mysterious</option>
               <option>fast</option>
             </select>
             <label>Chapters</label>
-            <input type="number" value={form.chapters} min={3} max={12} onChange={(e) => setForm({ ...form, chapters: Number(e.target.value) })} />
+            <input name="chapters" type="number" value={form.chapters} min={3} max={12} onChange={(e) => setForm({ ...form, chapters: Number(e.target.value) })} />
             <label>Focus (optional)</label>
-            <textarea value={form.focus} onChange={(e) => setForm({ ...form, focus: e.target.value })} />
+            <textarea name="focus" value={form.focus} onChange={(e) => setForm({ ...form, focus: e.target.value })} />
             <button type="submit" style={{ padding: 12, borderRadius: 12, border: 'none', background: '#38bdf8', color: '#020617' }}>
               Generate
             </button>

@@ -4,3 +4,5 @@ stories/*.json
 __pycache__/
 venv/
 .env
+frontend/.env.local
+frontend/test-results/
