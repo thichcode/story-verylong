@@ -3,3 +3,4 @@ frontend/.next/
 stories/*.json
 __pycache__/
 venv/
+.env
