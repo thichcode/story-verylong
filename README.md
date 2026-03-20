@@ -22,5 +22,10 @@ Set environment variables for deployment:
 ## Story generation pipeline
 Use `scripts/story_pipeline.py` to generate a sample story and save it under `stories/`.
 
+## Token rotation
+- Use `scripts/rotate_token.sh` locally or trigger the GitHub Action below.
+- GitHub Action `Rotate Story Token` (workflow `rotate-token.yml`) connects to your server via SSH and runs the rotation script.
+- Required secrets: `SERVER_USER`, `SERVER_HOST`, `SERVER_SSH_KEY`.
+
 ## Configuration
 Copy `.env` and customize tokens/URLs before running services.
