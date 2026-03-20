@@ -28,6 +28,18 @@
     <div class="meta">Create epic threads with local LLMs.</div>
   </div>
   <div class="grid">
+  <div class="panel">
+    <h2>Continue a story</h2>
+    <form id="continue-form">
+      <label>Story ID</label>
+      <input name="story_id" placeholder="story-1234567890" />
+      <label>Additional chapters</label>
+      <input type="number" name="chapters" min="1" max="6" value="1" />
+      <label>New tone (optional)</label>
+      <select name="tone"><option>epic</option><option>mysterious</option><option>fast</option></select>
+      <button type="submit">Extend story</button>
+    </form>
+  </div>
     <div class="panel">
       <h2>Brief key inputs</h2>
       <form id="story-form">
@@ -51,6 +63,8 @@
     </div>
   </div>
   <div id="outline"></div>
+  <div id="continue-result" class="panel" style="margin-top:18px; display:none;"></div>
+
 </main>
 <script>
   const form = document.getElementById('story-form');

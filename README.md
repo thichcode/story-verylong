@@ -2,19 +2,21 @@
 
 A flagship site that builds long-form stories on demand. The UI is inspired by Crucix-style command centers and calls a local FastAPI pipeline that outlines and drafts each chapter sequentially.
 
-## Quickstart
+## Quickstart Backend
 ```bash
 pip install -r requirements.txt
 uvicorn app.main:APP --reload --port 8000
 ```
 
-## API
-- `POST /api/story` – send `{title, genre, tone, chapters, focus}` and receive outline + chapters.
-- `GET /stories` – list generated story IDs.
+## Frontend (Next.js for Vercel)
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Set environment variables for deployment:
+- `NEXT_PUBLIC_API_URL` (e.g. `http://localhost:8000`)
+- `NEXT_PUBLIC_API_TOKEN` (default `omni-token`)
 
-## Assets
-- `static/index.html` – landing page with form + output. Deploy anywhere (Vercel-friendly) and proxy to backend.
-- `scripts/story_pipeline.py` – sample CLI runner builtin to produce one story for testing.
-
-## Deploy
-You can serve the backend locally and point a Vercel/Netlify static frontend to the API URL.
+## Story generation pipeline
+Use `scripts/story_pipeline.py` to generate a sample story and save it under `stories/`.

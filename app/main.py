@@ -4,7 +4,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Optional
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -43,6 +43,12 @@ class StoryResponse(BaseModel):
     created_at: str
 
 
+
+
+class StoryContinueRequest(BaseModel):
+    story_id: str
+    chapters: int = Field(1, ge=1, le=6)
+    tone: Optional[str] = None
 def make_outline(title: str, genre: str, chapters: int) -> List[str]:
     base = GENRE_PROMPTS.get(genre, "web of intrigue")
     return [f"Chapter {i}: {title} — {base} scene {i}" for i in range(1, chapters + 1)]
@@ -59,6 +65,12 @@ def draft_chapter(outline_line: str, tone: str) -> str:
         f"{outline_line}. The scene {verb} with lyrical description, unresolved tension, and a high-stakes decision point."
     )
 
+
+def load_story(slug: str) -> Optional[dict]:
+    file=STORIES / f'{slug}.json'
+    if not file.exists():
+        return None
+    return json.loads(file.read_text())
 
 def persist_story(payload: dict) -> Path:
     slug = payload["id"]
@@ -90,6 +102,26 @@ def build_story(pr: StoryRequest):
 
 
 @app.get("/stories")
+
+
+@app.post('/api/story/continue', response_model=StoryResponse)
+def continue_story(req: StoryContinueRequest):
+    story=load_story(req.story_id)
+    if not story:
+        raise HTTPException(status_code=404, detail='story not found')
+    new_outlines=[]
+    start=len(story['outline'])+1
+    for i in range(start, start+req.chapters):
+        new_outlines.append(f'Chapter {i}: {story['title']} — continuation beat {i}')
+    new_chapters=[draft_chapter(line, req.tone or story.get('cover','epic')) for line in new_outlines]
+    story['outline'].extend(new_outlines)
+    story['chapters'].extend(new_chapters)
+    story['summary']=summarize_story(story['chapters'])
+    story['cover']=story.get('cover')
+    story['created_at']=datetime.utcnow().isoformat()+'Z'
+    persist_story(story)
+    return story
+
 def list_stories():
     return [p.stem for p in STORIES.glob("*.json")]
 
