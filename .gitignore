@@ -1,0 +1,5 @@
+frontend/node_modules/
+frontend/.next/
+stories/*.json
+__pycache__/
+venv/
