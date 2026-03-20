@@ -1,4 +1,5 @@
 import json
+import os
 import random
 from datetime import datetime
 from pathlib import Path
@@ -13,6 +14,9 @@ BASE = Path(__file__).resolve().parent.parent
 STORIES = BASE / "stories"
 STATIC = BASE / "static"
 STORIES.mkdir(exist_ok=True)
+
+AUTH_TOKEN = os.environ.get('STORY_API_TOKEN', 'omni-token')
+
 
 app = FastAPI(title="Story VeryLong")
 app.mount("/static", StaticFiles(directory=STATIC), name="static")
@@ -83,7 +87,16 @@ def summarize_story(chapters: List[str]) -> str:
     return " | ".join(chapters[:2]) + " ..."
 
 
-@app.post("/api/story", response_model=StoryResponse)
+def authorize(request: Request):
+    auth_header=request.headers.get('Authorization','')
+    if not auth_header.startswith('Bearer '):
+        raise HTTPException(status_code=401, detail='Missing bearer token')
+    token=auth_header.split(' ',1)[1] if ' ' in auth_header else ''
+    if token!=AUTH_TOKEN:
+        raise HTTPException(status_code=403, detail='Invalid token')
+
+@app.post("/api/story", dependencies=[Depends(authorize)])
+, response_model=StoryResponse)
 def build_story(pr: StoryRequest):
     slug = f"story-{int(datetime.utcnow().timestamp())}"
     outline = make_outline(pr.title, pr.genre, pr.chapters)
