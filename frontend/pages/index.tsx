@@ -1,5 +1,6 @@
 import useSWR from 'swr';
-import { useState } from 'react';
+import { FormEvent, useMemo, useState } from 'react';
+import styles from '../styles/Home.module.css';
 
 type StoryRequest = {
   title: string;
@@ -17,36 +18,117 @@ type StoryResponse = {
   summary: string;
   cover: string;
   created_at: string;
+  genre?: string;
 };
 
-const genreShowcase = [
+type TrendingGenre = {
+  genre: string;
+  headline: string;
+  description: string;
+  palette: string;
+  momentum: number;
+  mood_board: string[];
+};
+
+type PathChoice = {
+  id: string;
+  label: string;
+  summary: string;
+  focus: string;
+  accent: string;
+};
+
+const defaultTrending: TrendingGenre[] = [
   {
-    name: 'Fantasy',
-    description: 'Knightly courts, floating citadels, rival mages wage delicate wars.',
-    palette: 'linear-gradient(140deg, rgba(135,94,255,0.8), rgba(6,182,212,0.7))',
-    mood: 'Chivalric mystery',
+    genre: 'Fantasy',
+    headline: 'Aurora courts and drifting citadels',
+    description: 'Arcane democracy, skyships, and noble houses striking secret pacts.',
+    palette: 'linear-gradient(145deg, rgba(124,77,255,0.92), rgba(16,185,129,0.88))',
+    momentum: 94,
+    mood_board: ['Lucent sigils', 'Velvet storms', 'Regal whisper-lines', 'Constellation rites'],
   },
   {
-    name: 'Sci-Fi',
-    description: 'Quantum politics, solar expeditions, and cities driven by AI legends.',
-    palette: 'linear-gradient(140deg, rgba(16,185,129,0.9), rgba(14,165,233,0.8))',
-    mood: 'Futuristic intrigue',
+    genre: 'Sci-Fi',
+    headline: 'Neon protocol and orbital rebellions',
+    description: 'AI councils, solar scavengers, and civil pronouncements from a drifting colony.',
+    palette: 'linear-gradient(145deg, rgba(14,165,233,0.95), rgba(251,191,36,0.9))',
+    momentum: 88,
+    mood_board: ['Chromed alleys', 'Pulse-lit broadcasts', 'Hologram vows', 'Coded meteor rain'],
   },
   {
-    name: 'Thriller',
-    description: 'Night streets, double agents, and puzzles of trust that crack under pressure.',
-    palette: 'linear-gradient(140deg, rgba(248,113,113,0.9), rgba(217,119,6,0.9))',
-    mood: 'High-voltage suspense',
+    genre: 'Thriller',
+    headline: 'Rain-soaked files and midnight architect',
+    description: 'Surveillance officers, vault heists, and breathless bargains in shadow-drenched cities.',
+    palette: 'linear-gradient(145deg, rgba(248,113,113,0.95), rgba(217,119,6,0.92))',
+    momentum: 82,
+    mood_board: ['Static fog', 'Sapphire scanners', 'Crisp whispers', 'Steel heartbeat'],
   },
   {
-    name: 'Romance',
-    description: 'Fleeting glances on rain-slicked rooftops and letters folded with longing.',
-    palette: 'linear-gradient(140deg, rgba(236,72,153,0.9), rgba(250,204,21,0.85))',
-    mood: 'Velvet warmth',
+    genre: 'Romance',
+    headline: 'Rain-burnished rooftops and secret letters',
+    description: 'Star-crossed couriers, rewound time loops, and memories traced in ink.',
+    palette: 'linear-gradient(145deg, rgba(236,72,153,0.9), rgba(250,204,21,0.88))',
+    momentum: 79,
+    mood_board: ['Velvet promises', 'Amber rainfall', 'Letter-bound pauses', 'Lace pulse'],
   },
 ];
 
 const languages = ['English', 'Vietnamese', 'Japanese', 'Spanish', 'French'];
+
+const pathTemplates = [
+  {
+    label: 'Trace the ember signal',
+    summary: 'The ember signal stutters, promising a double-sided reveal.',
+    focusTag: 'Trace the ember signal',
+    accent: '#fb7185',
+  },
+  {
+    label: 'Protect the relic pulse',
+    summary: 'A relic pulse complicates loyalties, drawing rival stations close.',
+    focusTag: 'Protect the relic pulse',
+    accent: '#22d3ee',
+  },
+  {
+    label: 'Confront the mirrored rival',
+    summary: 'A mirrored rival slips through the dossier, daring a desperate wager.',
+    focusTag: 'Confront the mirrored rival',
+    accent: '#fde047',
+  },
+];
+
+const textureWords = ['ember', 'silk', 'ozone', 'shadow', 'velvet'];
+
+const expandChapterParagraphs = (chapter: string, genre: string, index: number) => {
+  const trimmed = chapter.trim();
+  const snippet = trimmed.split('.').find((part) => part.trim()) ?? trimmed;
+  const texture = textureWords[index % textureWords.length];
+  return [
+    trimmed,
+    `${snippet}. Beyond that beat, the ${genre.toLowerCase()} ${texture} swells and pulls the crew toward a daring shift.`,
+    `Moments later, the ${texture} storm settles into a fragile hush while sparks whisper about the next breach.`,
+  ];
+};
+
+const buildCliffhanger = (chapter: string, genre: string) => {
+  const pieces = chapter
+    .split('.')
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const anchor = pieces[0] ?? chapter;
+  return `Cliffhanger: ${anchor} — the ${genre.toLowerCase()} tide now tilts toward a fragile duel.`;
+};
+
+const buildChapterChoices = (chapter: string, chapterIndex: number, genre: string, title: string): PathChoice[] =>
+  pathTemplates.map((template, motifIndex) => {
+    const snippet = chapter.split(',')[0]?.trim() || title;
+    return {
+      id: `${chapterIndex}-${motifIndex}`,
+      label: template.label,
+      summary: `${template.summary} ${genre} veins thread through ${snippet.toLowerCase()}.`,
+      focus: `${template.focusTag} from ${title} chapter ${chapterIndex + 1} to steer ${genre} currents.`,
+      accent: template.accent,
+    };
+  });
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -60,11 +142,43 @@ export default function Home() {
   });
   const [story, setStory] = useState<StoryResponse | null>(null);
   const [language, setLanguage] = useState('English');
+  const [selectedPaths, setSelectedPaths] = useState<Record<number, string>>({});
+  const [selectedPathFocus, setSelectedPathFocus] = useState<string | null>(null);
+  const [continuing, setContinuing] = useState(false);
 
-  const { data: stories } = useSWR('/api/stories', fetcher, { refreshInterval: 60000 });
+  const { data: stories } = useSWR<string[]>('/api/stories', fetcher, { refreshInterval: 60000 });
+  const { data: trending } = useSWR<TrendingGenre[]>('/api/trending', fetcher, {
+    fallbackData: defaultTrending,
+  });
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const trendingList = trending ?? defaultTrending;
+  const moodTags = useMemo(() => {
+    const tags = trendingList.flatMap((item) => item.mood_board);
+    return Array.from(new Set(tags)).slice(0, 12);
+  }, [trendingList]);
+
+  const chapterDetails = useMemo(() => {
+    if (!story) {
+      return [];
+    }
+    const activeGenre = story.genre ?? form.genre;
+    return story.chapters.map((chapter, idx) => ({
+      body: expandChapterParagraphs(chapter, activeGenre, idx),
+      cliffhanger: buildCliffhanger(chapter, activeGenre),
+      choices: buildChapterChoices(chapter, idx, activeGenre, story.title),
+    }));
+  }, [story, form.genre]);
+
+  const handleChoiceSelect = (chapterIdx: number, choice: PathChoice) => {
+    setSelectedPaths((prev) => ({ ...prev, [chapterIdx]: choice.id }));
+    setSelectedPathFocus(choice.focus);
+    setForm((prev) => ({ ...prev, focus: choice.focus }));
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setSelectedPaths({});
+    setSelectedPathFocus(null);
     const focusParts = [form.focus?.trim()].filter(Boolean);
     if (language !== 'English') {
       focusParts.push(`Language: ${language}`);
@@ -79,78 +193,119 @@ export default function Home() {
     setStory(payload);
   };
 
+  const handleContinueStory = async () => {
+    if (!story || !selectedPathFocus) {
+      return;
+    }
+    setContinuing(true);
+    try {
+      const response = await fetch('/api/story/continue', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          story_id: story.id,
+          chapters: 1,
+          tone: form.tone,
+        }),
+      });
+      const payload: StoryResponse = await response.json();
+      if (!response.ok) {
+        console.error('Failed to continue story', payload);
+        return;
+      }
+      setStory(payload);
+      setForm((prev) => ({ ...prev, focus: selectedPathFocus }));
+    } catch (error) {
+      console.error('Failed to continue story', error);
+    } finally {
+      setContinuing(false);
+    }
+  };
+
   return (
-    <main style={{ minHeight: '100vh', background: '#01030a', color: '#f8fafc' }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 24px 60px' }}>
-        <header style={{ marginBottom: 32 }}>
-          <p style={{ letterSpacing: '0.4em', color: '#a5b4fc', fontSize: 12 }}>STORY VERYLONG</p>
-          <h1 style={{ fontSize: 48, margin: '12px 0' }}>Forge cinematic sagas in real time</h1>
-          <p style={{ fontSize: 18, color: '#cbd5f5', maxWidth: 700 }}>
-            Choose a genre, tone, chapter span, and language. The engine builds the outline, draft chapters, and keeps a
-            cinematic history you can expand or export.
+    <main className={styles.page}>
+      <div className={styles.container}>
+        <header className={styles.hero}>
+          <p className={styles.heroBadge}>STORY VERYLONG</p>
+          <h1 className={styles.heroTitle}>Forge cinematic sagas in real time</h1>
+          <p className={styles.heroCopy}>
+            Choose a genre, tone, chapter span, and language. The engine builds the outline, draft chapters, and keeps
+            a cinematic history you can expand or export.
           </p>
         </header>
 
-        <section
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: 16,
-            marginBottom: 32,
-          }}
-        >
-          {genreShowcase.map((item) => (
-            <div
-              key={item.name}
-              style={{
-                background: item.palette,
-                padding: 20,
-                borderRadius: 20,
-                minHeight: 180,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.4)',
-              }}
-            >
-              <div>
-                <p style={{ fontSize: 14, opacity: 0.8 }}>{item.mood}</p>
-                <h3 style={{ margin: '8px 0', fontSize: 22 }}>{item.name}</h3>
-                <p style={{ fontSize: 14, lineHeight: 1.5 }}>{item.description}</p>
-              </div>
-              <span style={{ fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.2em' }}>Select &amp; build</span>
+        <section className={styles.trendingSection}>
+          <div className={styles.sectionHeader}>
+            <div>
+              <p className={styles.sectionLabel}>Trending Genres</p>
+              <h2 className={styles.sectionTitle}>Fresh currents stirring the narrative table</h2>
+              <p className={styles.sectionDescription}>
+                Each pulse here reflects the most requested palettes from the cinematic reader — pick one to let the
+                story engine echo its colors.
+              </p>
             </div>
-          ))}
+          </div>
+          <div className={styles.trendingCarousel}>
+            {trendingList.map((item) => (
+              <article
+                key={item.genre}
+                className={styles.trendingCard}
+                style={{ backgroundImage: item.palette }}
+              >
+                <div className={styles.trendingCardContent}>
+                  <p className={styles.cardGenre}>{item.genre}</p>
+                  <h3 className={styles.cardHeadline}>{item.headline}</h3>
+                  <p className={styles.cardDescription}>{item.description}</p>
+                </div>
+                <div className={styles.momentumGroup}>
+                  <span className={styles.momentumBadge}>{item.momentum}%</span>
+                  <div className={styles.momentumBar}>
+                    <span className={styles.momentumFill} style={{ width: `${item.momentum}%` }} />
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
 
-        <section style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 24, marginBottom: 32 }}>
-          <form
-            onSubmit={handleSubmit}
-            style={{
-              background: 'rgba(15,23,42,0.9)',
-              borderRadius: 24,
-              padding: 24,
-              display: 'grid',
-              gap: 16,
-              boxShadow: '0 15px 40px rgba(0,0,0,0.35)',
-            }}
-          >
-            <label style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.2em' }}>Story Title</label>
+        <section className={styles.moodSection}>
+          <div className={styles.sectionHeader}>
+            <div>
+              <p className={styles.sectionLabel}>Mood Board</p>
+              <h2 className={styles.sectionTitle}>Textures & pulses for the cinematic reader</h2>
+            </div>
+            <p className={styles.sectionDescription}>
+              Layer the words below into your focus prompt or take them as a visual springboard before summoning the next
+              chapter.
+            </p>
+          </div>
+          <div className={styles.moodGrid}>
+            {moodTags.map((tag) => (
+              <span key={tag} className={styles.moodChip}>
+                {tag}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.controlSection}>
+          <form className={styles.storyForm} onSubmit={handleSubmit}>
+            <label className={styles.formLabel}>Story Title</label>
             <input
+              className={styles.fieldInput}
               name="title"
               value={form.title}
               onChange={(e) => setForm({ ...form, title: e.target.value })}
-              style={{ borderRadius: 12, border: '1px solid rgba(148,163,184,0.3)', padding: '10px 12px', background: '#020617', color: '#f8fafc' }}
             />
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            <div className={styles.twoColumn}>
               <div>
-                <label style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.2em' }}>Genre</label>
+                <label className={styles.formLabel}>Genre</label>
                 <select
+                  className={styles.fieldInput}
                   name="genre"
                   value={form.genre}
                   onChange={(e) => setForm({ ...form, genre: e.target.value })}
-                  style={{ width: '100%', borderRadius: 12, padding: '10px 12px', background: '#020617', color: '#f8fafc', border: '1px solid rgba(148,163,184,0.3)' }}
                 >
                   <option>Fantasy</option>
                   <option>Sci-Fi</option>
@@ -159,12 +314,12 @@ export default function Home() {
                 </select>
               </div>
               <div>
-                <label style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.2em' }}>Tone</label>
+                <label className={styles.formLabel}>Tone</label>
                 <select
+                  className={styles.fieldInput}
                   name="tone"
                   value={form.tone}
                   onChange={(e) => setForm({ ...form, tone: e.target.value })}
-                  style={{ width: '100%', borderRadius: 12, padding: '10px 12px', background: '#020617', color: '#f8fafc', border: '1px solid rgba(148,163,184,0.3)' }}
                 >
                   <option>epic</option>
                   <option>mysterious</option>
@@ -173,25 +328,25 @@ export default function Home() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            <div className={styles.twoColumn}>
               <div>
-                <label style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.2em' }}>Chapters</label>
+                <label className={styles.formLabel}>Chapters</label>
                 <input
+                  className={styles.fieldInput}
                   name="chapters"
                   type="number"
                   value={form.chapters}
                   min={3}
                   max={12}
                   onChange={(e) => setForm({ ...form, chapters: Number(e.target.value) })}
-                  style={{ width: '100%', borderRadius: 12, padding: '10px 12px', background: '#020617', color: '#f8fafc', border: '1px solid rgba(148,163,184,0.3)' }}
                 />
               </div>
               <div>
-                <label style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.2em' }}>Language</label>
+                <label className={styles.formLabel}>Language</label>
                 <select
+                  className={styles.fieldInput}
                   value={language}
                   onChange={(e) => setLanguage(e.target.value)}
-                  style={{ width: '100%', borderRadius: 12, padding: '10px 12px', background: '#020617', color: '#f8fafc', border: '1px solid rgba(148,163,184,0.3)' }}
                 >
                   {languages.map((lang) => (
                     <option key={lang} value={lang}>
@@ -202,104 +357,113 @@ export default function Home() {
               </div>
             </div>
 
-            <label style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: '0.2em' }}>Mood / Focus</label>
+            <label className={styles.formLabel}>Mood / Focus</label>
             <textarea
+              className={styles.fieldTextarea}
               name="focus"
               value={form.focus}
               onChange={(e) => setForm({ ...form, focus: e.target.value })}
               rows={3}
-              style={{ borderRadius: 12, border: '1px solid rgba(148,163,184,0.3)', padding: '10px 12px', background: '#020617', color: '#f8fafc' }}
             />
 
-            <button
-              type="submit"
-              style={{
-                marginTop: 12,
-                background: 'linear-gradient(120deg, #22d3ee, #818cf8)',
-                border: 'none',
-                borderRadius: 14,
-                padding: '14px 0',
-                fontSize: 16,
-                fontWeight: 600,
-                cursor: 'pointer',
-                color: '#020617',
-                boxShadow: '0 15px 25px rgba(2,6,23,0.3)',
-              }}
-            >
+            <button type="submit" className={styles.primaryButton}>
               Summon Story
             </button>
           </form>
 
-          <div
-            style={{
-              background: '#0f172a',
-              borderRadius: 24,
-              padding: 24,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 12,
-              border: '1px solid rgba(148,163,184,0.15)',
-            }}
-          >
-            <h2 style={{ margin: 0 }}>Story Archive</h2>
-            <p style={{ marginTop: 0, color: '#94a3b8' }}>Recent legends you scripted automatically.</p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <aside className={styles.archivePanel}>
+            <h2>Story Archive</h2>
+            <p className={styles.archiveCopy}>Recent legends you scripted automatically.</p>
+            <div className={styles.archiveList}>
               {stories?.length ? (
                 stories.map((id: string) => (
-                  <span key={id} style={{ padding: '10px 12px', borderRadius: 12, background: 'rgba(148,163,184,0.08)' }}>
+                  <span key={id} className={styles.archiveItem}>
                     {id}
                   </span>
                 ))
               ) : (
-                <p style={{ color: '#64748b' }}>No stories yet. Generate one to see it listed.</p>
+                <p className={styles.archiveEmpty}>No stories yet. Generate one to see it listed.</p>
               )}
             </div>
-          </div>
+          </aside>
         </section>
 
         {story && (
-          <article
-            style={{
-              background: 'rgba(15,23,42,0.95)',
-              borderRadius: 32,
-              padding: 32,
-              boxShadow: '0 20px 60px rgba(2,6,23,0.8)',
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <article className={styles.cinematicReader}>
+            <header className={styles.readerHeader}>
               <div>
-                <p style={{ margin: 0, fontSize: 14, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#a5b4fc' }}>
-                  {story.genre || form.genre}
-                </p>
-                <h2 style={{ margin: '8px 0', fontSize: 36 }}>{story.title}</h2>
-                <p style={{ color: '#cbd5f5', maxWidth: 600 }}>{story.summary}</p>
+                <p className={styles.readerGenre}>{story.genre || form.genre}</p>
+                <h2>{story.title}</h2>
+                <p className={styles.readerSummary}>{story.summary}</p>
               </div>
-              <span style={{ fontSize: 12, color: '#94a3b8' }}>{new Date(story.created_at).toLocaleString()}</span>
+              <span className={styles.readerTimestamp}>{new Date(story.created_at).toLocaleString()}</span>
+            </header>
+            <div className={styles.focusPanel}>
+              <div>
+                <p className={styles.focusLabel}>Next Path Focus</p>
+                <p className={styles.focusValue}>
+                  {selectedPathFocus ?? 'Select a path below to lock the cinematic beat forward.'}
+                </p>
+              </div>
+              <button
+                type="button"
+                className={styles.continueButton}
+                disabled={!selectedPathFocus || continuing}
+                onClick={handleContinueStory}
+              >
+                {continuing ? 'Extending arc…' : 'Continue arc'}
+              </button>
             </div>
-            <div style={{ marginTop: 24, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18 }}>
+            <div className={styles.readerOutline}>
               {story.outline.map((line, idx) => (
-                <div
-                  key={line}
-                  style={{
-                    borderRadius: 18,
-                    padding: 18,
-                    background: 'rgba(15,23,42,0.9)',
-                    border: '1px solid rgba(148,163,184,0.2)',
-                    boxShadow: '0 8px 18px rgba(2,6,23,0.3)',
-                  }}
-                >
-                  <p style={{ margin: 0, fontSize: 12, letterSpacing: '0.3em', textTransform: 'uppercase', color: '#94a3b8' }}>
-                    Outline {idx + 1}
-                  </p>
-                  <p style={{ marginTop: 6 }}>{line}</p>
+                <div key={line} className={styles.outlineCard}>
+                  <p className={styles.outlineLabel}>Outline {idx + 1}</p>
+                  <p className={styles.outlineText}>{line}</p>
                 </div>
               ))}
             </div>
-            <div style={{ marginTop: 32, display: 'grid', gap: 24 }}>
-              {story.chapters.map((chapter, idx) => (
-                <section key={idx} style={{ borderRadius: 16, padding: 18, background: 'rgba(2,6,23,0.8)' }}>
-                  <h3 style={{ color: '#60a5fa', marginTop: 0 }}>Chapter {idx + 1}</h3>
-                  <p style={{ marginBottom: 0 }}>{chapter}</p>
+            <div className={styles.readerChapters}>
+              {chapterDetails.map((chapterDetail, idx) => (
+                <section
+                  key={`chapter-${idx}`}
+                  className={styles.chapterPanel}
+                  data-chapter-panel-index={idx}
+                >
+                  <h3 className={styles.chapterTitle}>Chapter {idx + 1}</h3>
+                  <div className={styles.chapterBody}>
+                    {chapterDetail.body.map((paragraph, paragraphIdx) => (
+                      <p key={`${idx}-${paragraphIdx}`} className={styles.chapterParagraph}>
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                  <div className={styles.cliffhangerRow}>
+                    <p className={styles.cliffhangerLabel}>Cliffhanger</p>
+                    <p className={styles.chapterCliffhanger}>{chapterDetail.cliffhanger}</p>
+                  </div>
+                  <div className={styles.choiceGrid}>
+                    {chapterDetail.choices.map((choice) => {
+                      const isChoiceActive = selectedPaths[idx] === choice.id;
+                      return (
+                        <button
+                          key={choice.id}
+                          type="button"
+                          data-choice-id={choice.id}
+                          aria-pressed={isChoiceActive}
+                          className={`${styles.choiceCard} ${isChoiceActive ? styles.choiceCardActive : ''}`}
+                          style={
+                            isChoiceActive
+                              ? { borderColor: choice.accent, boxShadow: `0 0 0 3px ${choice.accent}` }
+                              : undefined
+                          }
+                          onClick={() => handleChoiceSelect(idx, choice)}
+                        >
+                          <span className={styles.choiceLabel}>{choice.label}</span>
+                          <p className={styles.choiceSummary}>{choice.summary}</p>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </section>
               ))}
             </div>
