@@ -27,7 +27,7 @@ if not auth_logger.handlers:
     auth_logger.addHandler(handler)
 auth_logger.setLevel(logging.WARNING)
 
-AUTH_TOKEN = os.environ.get('STORY_API_TOKEN') or os.environ.get('NEXT_PUBLIC_API_TOKEN') or 'omni-token'
+AUTH_TOKEN = os.environ.get('STORY_API_TOKEN', 'omni-token')
 
 
 app = FastAPI(title="Story VeryLong")

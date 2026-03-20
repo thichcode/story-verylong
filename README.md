@@ -16,7 +16,6 @@ npm run dev
 ```
 Set environment variables for deployment:
 - `NEXT_PUBLIC_API_URL` (e.g. `http://localhost:8000`)
-- `NEXT_PUBLIC_URL` (optional alias for the API URL)
 - `NEXT_PUBLIC_API_TOKEN` (same as `STORY_API_TOKEN`)
 - `STORY_API_TOKEN` (backend must match)
 
@@ -31,7 +30,6 @@ Use `scripts/story_pipeline.py` to generate a sample story and save it under `st
 ## Configuration
 Copy `.env` and customize tokens/URLs before running services.
 
-Backend will read `STORY_API_TOKEN` or its alias `NEXT_PUBLIC_API_TOKEN`, and `STORY_API_URL` or `NEXT_PUBLIC_URL` so your Vercel env names stay compatible.
 
 ## Security
 - fail2ban watches /var/log/story-superlong/auth.log and bans IPs after 3 unauthorized token attempts within 10 minutes (bantime=1h).
