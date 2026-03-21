@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { FormEvent, useMemo, useState } from 'react';
+import { FormEvent, useMemo, useRef, useState } from 'react';
 import styles from '../styles/Home.module.css';
 
 type StoryRequest = {
@@ -8,6 +8,7 @@ type StoryRequest = {
   tone: string;
   chapters: number;
   focus?: string;
+  language?: string;
 };
 
 type StoryChapter = {
@@ -186,9 +187,11 @@ export default function Home() {
     tone: 'epic',
     chapters: 5,
     focus: 'Crew drama and rhythm changes',
+    language: 'English',
   });
   const [story, setStory] = useState<StoryResponse | null>(null);
   const [language, setLanguage] = useState('English');
+  const readerRef = useRef<HTMLElement | null>(null);
   const [selectedPaths, setSelectedPaths] = useState<Record<number, string>>({});
   const [selectedPathFocus, setSelectedPathFocus] = useState<string | null>(null);
   const [continuing, setContinuing] = useState(false);
@@ -226,6 +229,14 @@ export default function Home() {
     setForm((prev) => ({ ...prev, focus: choice.focus }));
   };
 
+
+  const handleReadStory = () => {
+    if (!story || !readerRef.current) {
+      return;
+    }
+    readerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSelectedPaths({});
@@ -238,7 +249,7 @@ export default function Home() {
     const res = await fetch('/api/story', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...form, focus: payloadFocus }),
+      body: JSON.stringify({ ...form, focus: payloadFocus, language }),
     });
     const payload: StoryResponse = await res.json();
     setStory(payload);
@@ -257,6 +268,8 @@ export default function Home() {
           story_id: story.id,
           chapters: 1,
           tone: form.tone,
+          focus: selectedPathFocus,
+          language,
         }),
       });
       const payload: StoryResponse = await response.json();
@@ -421,6 +434,16 @@ export default function Home() {
             <button type="submit" className={styles.primaryButton}>
               Summon Story
             </button>
+            <div className={styles.readStoryRow}>
+              <button
+                type="button"
+                className={styles.readButton}
+                onClick={handleReadStory}
+                disabled={!story}
+              >
+                Read Story
+              </button>
+            </div>
           </form>
 
           <aside className={styles.archivePanel}>
@@ -441,7 +464,7 @@ export default function Home() {
         </section>
 
         {story && (
-          <article className={styles.cinematicReader}>
+          <article ref={readerRef} className={styles.cinematicReader}>
             <header className={styles.readerHeader}>
               <div>
                 <p className={styles.readerGenre}>{story.genre || form.genre}</p>

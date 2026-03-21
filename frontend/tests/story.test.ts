@@ -5,7 +5,7 @@ test('generate story, select a path, and continue', async ({ page }) => {
   await page.fill('input[name="title"]', 'Test Quest');
   await page.selectOption('select[name="genre"]', 'Sci-Fi');
   await page.selectOption('select[name="tone"]', 'epic');
-  await page.selectOption('select[name="language"]', 'English');
+  await page.selectOption('select[name="language"]', 'Spanish');
   await page.fill('input[name="chapters"]', '4');
   await page.fill('textarea[name="focus"]', 'high stakes heist');
 
@@ -13,6 +13,10 @@ test('generate story, select a path, and continue', async ({ page }) => {
   await page.waitForSelector('[data-chapter-panel-index]', { timeout: 20000 });
   await expect(page.locator('h2').last()).toContainText('Test Quest');
   await expect(page.locator('[data-chapter-panel-index]').first()).toContainText('Chapter 1');
+
+  const readButton = page.locator('button', { hasText: 'Read Story' });
+  await expect(readButton).toBeEnabled();
+  await readButton.click();
 
   const chapterPanels = page.locator('[data-chapter-panel-index]');
   const initialChapterCount = await chapterPanels.count();

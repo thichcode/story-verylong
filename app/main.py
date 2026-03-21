@@ -102,6 +102,7 @@ class StoryRequest(BaseModel):
     tone: str = Field("epic")
     chapters: int = Field(5, ge=3, le=12)
     focus: Optional[str] = None
+    language: str = Field("English")
 
 
 class ChapterDetail(BaseModel):
@@ -129,6 +130,7 @@ class StoryResponse(BaseModel):
     cover: str
     next_paths: List[NextPathHint]
     created_at: str
+    language: str
 
 
 class StoryContinueRequest(BaseModel):
@@ -136,6 +138,7 @@ class StoryContinueRequest(BaseModel):
     chapters: int = Field(1, ge=1, le=6)
     tone: Optional[str] = None
     focus: Optional[str] = None
+    language: Optional[str] = None
 
 
 class TrendingGenre(BaseModel):
@@ -349,6 +352,7 @@ def build_story(pr: StoryRequest):
         pr.focus,
     )
     response = {
+        "language": pr.language,
         "id": slug,
         "title": pr.title,
         "genre": pr.genre,
@@ -372,8 +376,10 @@ def continue_story(req: StoryContinueRequest):
         raise HTTPException(status_code=404, detail='story not found')
     tone = req.tone or story.get('tone', 'epic')
     focus = req.focus or story.get('focus')
+    language = req.language or story.get('language', 'English')
     story['tone'] = tone
     story['focus'] = focus
+    story['language'] = language
     new_outlines = []
     start = len(story['outline']) + 1
     for i in range(start, start + req.chapters):
