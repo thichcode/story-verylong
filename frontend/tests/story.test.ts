@@ -2,24 +2,24 @@ import { test, expect } from '@playwright/test';
 
 test('generate story, select a path, and continue', async ({ page }) => {
   await page.goto('/');
-  const inputs = page.locator('form input');
-  await inputs.first().fill('Test Quest');
-  const selects = page.locator('form select');
-  await selects.nth(0).selectOption('Sci-Fi');
-  await selects.nth(1).selectOption('epic');
-  await page.locator('form input[type="number"]').fill('4');
+  await page.fill('input[name="title"]', 'Test Quest');
+  await page.selectOption('select[name="genre"]', 'Sci-Fi');
+  await page.selectOption('select[name="tone"]', 'epic');
+  await page.selectOption('select[name="language"]', 'English');
+  await page.fill('input[name="chapters"]', '4');
+  await page.fill('textarea[name="focus"]', 'high stakes heist');
 
   await page.click('button[type="submit"]');
-  await page.waitForSelector('article h2', { timeout: 20000 });
-  await expect(page.locator('article h2')).toContainText('Test Quest');
-  await expect(page.locator('article')).toContainText('Chapter 1');
+  await page.waitForSelector('[data-chapter-panel-index]', { timeout: 20000 });
+  await expect(page.locator('h2').last()).toContainText('Test Quest');
+  await expect(page.locator('[data-chapter-panel-index]').first()).toContainText('Chapter 1');
 
   const chapterPanels = page.locator('[data-chapter-panel-index]');
   const initialChapterCount = await chapterPanels.count();
 
   const firstChoice = page.locator('button[data-choice-id]').first();
   await firstChoice.click();
-  await expect(page.locator('textarea[name="focus"]')).toHaveValue(/chapter 1/i);
+  await expect(page.locator('textarea[name="focus"]')).not.toHaveValue('high stakes heist');
 
   const continueButton = page.locator('button', { hasText: 'Continue arc' });
   await expect(continueButton).toBeEnabled();

@@ -10,15 +10,31 @@ type StoryRequest = {
   focus?: string;
 };
 
+type StoryChapter = {
+  title?: string;
+  sections?: string[];
+  cliffhanger?: string;
+};
+
+type StoryPath = {
+  id: string;
+  title: string;
+  description: string;
+  focus: string;
+};
+
 type StoryResponse = {
   id: string;
   title: string;
   outline: string[];
-  chapters: string[];
+  chapters: Array<string | StoryChapter>;
   summary: string;
   cover: string;
   created_at: string;
   genre?: string;
+  tone?: string;
+  focus?: string | null;
+  next_paths?: StoryPath[];
 };
 
 type TrendingGenre = {
@@ -98,37 +114,68 @@ const pathTemplates = [
 
 const textureWords = ['ember', 'silk', 'ozone', 'shadow', 'velvet'];
 
-const expandChapterParagraphs = (chapter: string, genre: string, index: number) => {
-  const trimmed = chapter.trim();
-  const snippet = trimmed.split('.').find((part) => part.trim()) ?? trimmed;
-  const texture = textureWords[index % textureWords.length];
-  return [
-    trimmed,
-    `${snippet}. Beyond that beat, the ${genre.toLowerCase()} ${texture} swells and pulls the crew toward a daring shift.`,
-    `Moments later, the ${texture} storm settles into a fragile hush while sparks whisper about the next breach.`,
-  ];
+const normalizeChapter = (chapter: string | StoryChapter): StoryChapter => {
+  if (typeof chapter === 'string') {
+    return { sections: [chapter], cliffhanger: undefined };
+  }
+  return {
+    title: chapter.title,
+    sections: chapter.sections ?? [],
+    cliffhanger: chapter.cliffhanger,
+  };
 };
 
-const buildCliffhanger = (chapter: string, genre: string) => {
-  const pieces = chapter
+const expandChapterParagraphs = (chapter: StoryChapter, genre: string, index: number) => {
+  const primary = (chapter.sections && chapter.sections.length > 0 ? chapter.sections[0] : chapter.title || '').trim();
+  const snippet = primary.split('.').find((part) => part.trim()) ?? primary;
+  const texture = textureWords[index % textureWords.length];
+  const seeded = chapter.sections && chapter.sections.length > 0 ? chapter.sections : [primary];
+  return [
+    ...seeded,
+    `${snippet}. Beyond that beat, the ${genre.toLowerCase()} ${texture} swells and pulls the crew toward a daring shift.`,
+    `Moments later, the ${texture} storm settles into a fragile hush while sparks whisper about the next breach.`,
+  ].filter(Boolean);
+};
+
+const buildCliffhanger = (chapter: StoryChapter, genre: string) => {
+  if (chapter.cliffhanger) {
+    return chapter.cliffhanger;
+  }
+  const base = chapter.sections?.[0] || chapter.title || genre;
+  const pieces = base
     .split('.')
     .map((part) => part.trim())
     .filter(Boolean);
-  const anchor = pieces[0] ?? chapter;
+  const anchor = pieces[0] ?? base;
   return `Cliffhanger: ${anchor} — the ${genre.toLowerCase()} tide now tilts toward a fragile duel.`;
 };
 
-const buildChapterChoices = (chapter: string, chapterIndex: number, genre: string, title: string): PathChoice[] =>
-  pathTemplates.map((template, motifIndex) => {
-    const snippet = chapter.split(',')[0]?.trim() || title;
-    return {
-      id: `${chapterIndex}-${motifIndex}`,
-      label: template.label,
-      summary: `${template.summary} ${genre} veins thread through ${snippet.toLowerCase()}.`,
-      focus: `${template.focusTag} from ${title} chapter ${chapterIndex + 1} to steer ${genre} currents.`,
-      accent: template.accent,
-    };
-  });
+const buildChapterChoices = (
+  chapter: StoryChapter,
+  chapterIndex: number,
+  genre: string,
+  title: string,
+  responsePaths?: StoryPath[]
+): PathChoice[] => {
+  if (responsePaths && responsePaths.length > 0) {
+    return responsePaths.map((path, idx) => ({
+      id: path.id,
+      label: path.title,
+      summary: path.description,
+      focus: path.focus,
+      accent: pathTemplates[idx % pathTemplates.length].accent,
+    }));
+  }
+
+  const snippet = (chapter.sections?.[0] || chapter.title || title).split(',')[0]?.trim() || title;
+  return pathTemplates.map((template, motifIndex) => ({
+    id: `${chapterIndex}-${motifIndex}`,
+    label: template.label,
+    summary: `${template.summary} ${genre} veins thread through ${snippet.toLowerCase()}.`,
+    focus: `${template.focusTag} from ${title} chapter ${chapterIndex + 1} to steer ${genre} currents.`,
+    accent: template.accent,
+  }));
+};
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -162,11 +209,15 @@ export default function Home() {
       return [];
     }
     const activeGenre = story.genre ?? form.genre;
-    return story.chapters.map((chapter, idx) => ({
-      body: expandChapterParagraphs(chapter, activeGenre, idx),
-      cliffhanger: buildCliffhanger(chapter, activeGenre),
-      choices: buildChapterChoices(chapter, idx, activeGenre, story.title),
-    }));
+    return story.chapters.map((rawChapter, idx) => {
+      const chapter = normalizeChapter(rawChapter);
+      return {
+        title: chapter.title || `Chapter ${idx + 1}` ,
+        body: expandChapterParagraphs(chapter, activeGenre, idx),
+        cliffhanger: buildCliffhanger(chapter, activeGenre),
+        choices: buildChapterChoices(chapter, idx, activeGenre, story.title, story.next_paths),
+      };
+    });
   }, [story, form.genre]);
 
   const handleChoiceSelect = (chapterIdx: number, choice: PathChoice) => {
@@ -345,6 +396,7 @@ export default function Home() {
                 <label className={styles.formLabel}>Language</label>
                 <select
                   className={styles.fieldInput}
+                  name="language"
                   value={language}
                   onChange={(e) => setLanguage(e.target.value)}
                 >
@@ -429,7 +481,7 @@ export default function Home() {
                   className={styles.chapterPanel}
                   data-chapter-panel-index={idx}
                 >
-                  <h3 className={styles.chapterTitle}>Chapter {idx + 1}</h3>
+                  <h3 className={styles.chapterTitle}>{chapterDetail.title || `Chapter ${idx + 1}`}</h3>
                   <div className={styles.chapterBody}>
                     {chapterDetail.body.map((paragraph, paragraphIdx) => (
                       <p key={`${idx}-${paragraphIdx}`} className={styles.chapterParagraph}>
