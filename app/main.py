@@ -406,6 +406,22 @@ def continue_story(req: StoryContinueRequest):
 def list_stories():
     return [p.stem for p in STORIES.glob("*.json")]
 
+@app.get("/api/story/list")
+def story_list():
+    results=[]
+    for path in STORIES.glob("*.json"):
+        story=normalize_story_data(json.loads(path.read_text()))
+        results.append({
+            "id":story["id"],
+            "title":story["title"],
+            "genre":story.get("genre","Fantasy"),
+            "tone":story.get("tone","epic"),
+            "summary":story.get("summary",""),
+            "language":story.get("language","English"),
+            "chapters":story.get("chapters",[]),
+        })
+    return results
+
 
 @app.get("/api/trending", response_model=List[TrendingGenre])
 def get_trending():
