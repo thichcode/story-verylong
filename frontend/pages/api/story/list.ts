@@ -26,16 +26,21 @@ const normalize = (data: any): StoryCard => ({
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const files = await fs.readdir(STORIES_DIR);
+    const files = await fs.readdir(STORIES_DIR).catch(() => []);
     const cards: StoryCard[] = [];
     for (const file of files) {
       if (!file.endsWith('.json')) continue;
-      const raw = await fs.readFile(path.join(STORIES_DIR, file), 'utf-8');
-      const data = JSON.parse(raw);
-      cards.push(normalize(data));
+      try {
+        const raw = await fs.readFile(path.join(STORIES_DIR, file), 'utf-8');
+        const data = JSON.parse(raw);
+        cards.push(normalize(data));
+      } catch (error) {
+        continue;
+      }
     }
-    res.status(200).json(cards);
+    return res.status(200).json(cards);
   } catch (error) {
-    res.status(500).json({ error: 'Unable to load stories' });
+    const fallback: StoryCard[] = [];
+    return res.status(200).json(fallback);
   }
 }
