@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenClaw Command Tracker</title>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; background: #030711; color: #f8fafc; margin:0; }
+    main { max-width: 960px; margin: 40px auto; padding: 0 20px; }
+    h1 { font-size: 32px; margin-bottom: 6px; }
+    p { color: #94a3b8; }
+    table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+    th, td { padding: 12px 8px; text-align:left; border-bottom:1px solid rgba(255,255,255,0.08); font-size:14px; }
+    th { text-transform: uppercase; letter-spacing: 0.1em; color:#cbd5f5; font-size:12px; }
+    .status-running { color:#fbbf24; }
+    .status-success { color:#4ade80; }
+    .status-failed { color:#f87171; }
+    .output { font-family: 'SFMono-Regular', Consolas, monospace; font-size:13px; background: rgba(255,255,255,0.04); border-radius:8px; padding:12px; margin-top:8px; white-space:pre-wrap; }
+    .loader { margin-top: 40px; display:flex; justify-content:center; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Command Tracker</h1>
+    <p>Monitor each tracked command invocation and its status. Use <code>scripts/track_command.sh</code> to record a run.</p>
+    <div id="loader" class="loader">Loading log…</div>
+    <table id="log" hidden>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Command</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="log-body"></tbody>
+    </table>
+  </main>
+  <script>
+    async function loadLog() {
+      try {
+        const res = await fetch('../logs/commands.json');
+        const data = await res.json();
+        const tbody = document.getElementById('log-body');
+        data.forEach((entry, index) => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${entry.command}</td>
+            <td>${entry.start || '-'}</td>
+            <td>${entry.end || '-'}</td>
+            <td class="status-${entry.status}">${entry.status}</td>
+          `;
+          const row = tr;
+          const outputRow = document.createElement('tr');
+          const outTd = document.createElement('td');
+          outTd.colSpan = 5;
+          outTd.innerHTML = entry.output ? `<div class="output">${entry.output}</div>` : '<em>no output</em>';
+          outputRow.appendChild(outTd);
+          tbody.appendChild(row);
+          tbody.appendChild(outputRow);
+        });
+        document.getElementById('loader').hidden = true;
+        document.getElementById('log').hidden = false;
+      } catch (err) {
+        document.getElementById('loader').textContent = 'Unable to load log.';
+        console.error(err);
+      }
+    }
+    loadLog();
+  </script>
+</body>
+</html>

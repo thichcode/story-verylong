@@ -34,3 +34,8 @@ Copy `.env` and customize tokens/URLs before running services.
 ## Security
 - fail2ban watches /var/log/story-superlong/auth.log and bans IPs after 3 unauthorized token attempts within 10 minutes (bantime=1h).
 - Reverse proxy (TLS/rate-limit) advised before hitting /api/story.
+
+## Command Tracking
+- Use `scripts/track_command.sh <command>` to log a command run (build/test/etc.).
+- The tracker writes to `logs/commands.json` and is fronted by `docs/command-tracker.html`.
+- Open the HTML via a static server (e.g., `npx http-server docs`) to watch live updates.
