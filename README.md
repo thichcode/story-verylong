@@ -39,3 +39,8 @@ Copy `.env` and customize tokens/URLs before running services.
 - Use `scripts/track_command.sh <command>` to log a command run (build/test/etc.).
 - The tracker writes to `logs/commands.json` and is fronted by `docs/command-tracker.html`.
 - Open the HTML via a static server (e.g., `npx http-server docs`) to watch live updates.
+
+## Crypto Watchlist Ideas
+- Call `scripts/crypto_thien_thoi.py` to compute Thiên thời/Địa lợi/Nhân hòa signal and write `crypto/signals/latest.json`.
+- Sources in `docs/crypto-sources.md` feed `scripts/crypto_thien_thoi.py` for macro news.
+- Feed the resulting signal into your watchlist cron (`scripts/crypto_watchlist_cron.sh` or similar) for alerts.
