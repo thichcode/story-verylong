@@ -1,36 +1,138 @@
 {
   "id": "story-xuyen-khong-linh",
   "title": "Xuyên Không Lôi Linh",
-  "genres": ["xuyên không", "tu tiên", "hệ thống"],
-  "subGenres": ["bí cảnh", "tông môn", "luyện đan"],
+  "genres": [
+    "xuyên không",
+    "tu tiên",
+    "hệ thống"
+  ],
+  "subGenres": [
+    "bí cảnh",
+    "tông môn",
+    "luyện đan"
+  ],
   "tone": "sảng văn",
-  "toneTags": ["sảng văn", "hài"],
-  "powerStyles": ["kiếm đạo", "trận pháp"],
+  "toneTags": [
+    "sảng văn",
+    "hài"
+  ],
+  "powerStyles": [
+    "kiếm đạo",
+    "trận pháp"
+  ],
   "pacing": "medium",
-  "tags": ["lôi kiếp", "trọng sinh", "hệ thống", "bí cảnh", "ngự thú"],
-  "summary": "Linh Vân xuyên không vào thân phận ngoại môn, mở hệ thống Lôi Linh và đi qua bí cảnh tông môn, gặp lôi kiếp cùng hệ thống đòi hỏi tiến cảnh.",
+  "tags": [
+    "lôi kiếp",
+    "trọng sinh",
+    "hệ thống",
+    "bí cảnh",
+    "ngự thú"
+  ],
+  "summary": "Chapter 1: Lời thề trời mây — ngoại môn Lâm Uyên vừa bị đạp xuống vách, vừa chạm vào lược gỗ cổ khi trời vẫn còn đỏ. Tiếng hệ thống có giọng nữ khàn khàn vang lên: 'Lôi Linh căn, đánh thức đi'. Một tia sáng xuyên vào ngực, truyền vào tay kiếm nhỏ, mềm con, hô hấp quay tít. Cô không phải phàm nhân nữa. Hệ thống bật quest: 'Nhặt linh thạch lửa 3 viên, trấn áp hỏa linh'. Ba đệ tử ngoại môn cười nhạo, và Linh Vân trả lời bằng một cú lửa đánh gãy tay họ. | Chapter 2: Bí cảnh Huyền Vân — truyền thừa đang ở trong mạch nước cũ nhưng bị bảo hộ ba lớp. Hệ thống cho đề bài: đặt trận pháp 'Phong Vân Chuyển' để mở đường, sau đó thu phục thú linh Huyền Vân. Bố cục hài hước — đạo cô quân tử phát ngôn: 'Để tôi nhìn xem ngoại môn đệ tử nào chọc dân chúng'. Linh Vân mò vào, dùng kiếm khí lôi triều để làm phản hồi lửa, hệ thống phát thêm tag 'bí cảnh'. Cuộc chiến kết thúc với cliffhanger: một người khác dùng lôi kiếp rung động mạch nước.",
   "language": "vi",
-  "focus": "kiếm tu + trận pháp",
+  "focus": "trận pháp",
   "outline": [
-    "Chapter 1: Lời thề trời mây — ngoại môn phàm nhân bật hệ thống Lôi Linh", 
-    "Chapter 2: Bí cảnh Huyền Vân — quest trận pháp, tranh đoạt truyền thừa", 
-    "Chapter 3: Lôi kiếp đầu — hệ thống tra khảo linh lực, chí bảo lửa trời", 
-    "Chapter 4: Lần phi thăng đầu — đối thoại thánh nhân, mở thread trọng sinh"
+    "Chapter 1: Lời thề trời mây — ngoại môn phàm nhân bật hệ thống Lôi Linh",
+    "Chapter 2: Bí cảnh Huyền Vân — quest trận pháp, tranh đoạt truyền thừa",
+    "Chapter 3: Lôi kiếp đầu — hệ thống tra khảo linh lực, chí bảo lửa trời",
+    "Chapter 4: Lần phi thăng đầu — đối thoại thánh nhân, mở thread trọng sinh",
+    "Chapter 5: Xuyên Không Lôi Linh — continuation beat 5"
   ],
   "chapters": [
-    "Chapter 1: Lời thề trời mây — ngoại môn Lâm Uyên vừa bị đạp xuống vách, vừa chạm vào lược gỗ cổ khi trời vẫn còn đỏ. Tiếng hệ thống có giọng nữ khàn khàn vang lên: 'Lôi Linh căn, đánh thức đi'. Một tia sáng xuyên vào ngực, truyền vào tay kiếm nhỏ, mềm con, hô hấp quay tít. Cô không phải phàm nhân nữa. Hệ thống bật quest: 'Nhặt linh thạch lửa 3 viên, trấn áp hỏa linh'. Ba đệ tử ngoại môn cười nhạo, và Linh Vân trả lời bằng một cú lửa đánh gãy tay họ.",
-    "Chapter 2: Bí cảnh Huyền Vân — truyền thừa đang ở trong mạch nước cũ nhưng bị bảo hộ ba lớp. Hệ thống cho đề bài: đặt trận pháp 'Phong Vân Chuyển' để mở đường, sau đó thu phục thú linh Huyền Vân. Bố cục hài hước — đạo cô quân tử phát ngôn: 'Để tôi nhìn xem ngoại môn đệ tử nào chọc dân chúng'. Linh Vân mò vào, dùng kiếm khí lôi triều để làm phản hồi lửa, hệ thống phát thêm tag 'bí cảnh'. Cuộc chiến kết thúc với cliffhanger: một người khác dùng lôi kiếp rung động mạch nước.",
-    "Chapter 3: Lôi kiếp đầu — Hệ thống mở 'chiến cảnh lôi kiếp'. Linh Vân cần linh lực, thân thể, thần hồn và kinh mạch sạch. Cô bị triệu Vô Kỵ (đệ tử nội môn) ép, và một tâm ma bùng nổ, tạo ra ánh lửa giống hạt thiều. Hệ thống báo 'constellation alignment'. Cô dùng trận pháp triệu phục lôi thú, được thiên đạo buff. Chương dừng với lôi kiếp sắp nổ, hệ thống thèm hỏi 'tiếp tục phi thăng?' và chèn hình ảnh trọng sinh.",
-    "Chapter 4: Lần phi thăng đầu — sau lôi kiếp , ngoại môn có dấu hiệu chuyển sinh. Linh Vân quyết định dùng khí vận 'nghịch thiên cải mệnh'. Tông môn bấy giờ biểu quyết: bạn được thăng cấp, nhưng phải hi sinh linh lực, phải chấp nhận tông môn khác. Chương kết với hook: vừa định phi thăng thì một văn tự xuất hiện: 'Thiên mệnh đã ghi: ngươi là người về sau sẽ phá hệ thống'."
+    {
+      "title": "Chapter 1",
+      "sections": [
+        "Chapter 1: Lời thề trời mây — ngoại môn Lâm Uyên vừa bị đạp xuống vách, vừa chạm vào lược gỗ cổ khi trời vẫn còn đỏ. Tiếng hệ thống có giọng nữ khàn khàn vang lên: 'Lôi Linh căn, đánh thức đi'. Một tia sáng xuyên vào ngực, truyền vào tay kiếm nhỏ, mềm con, hô hấp quay tít. Cô không phải phàm nhân nữa. Hệ thống bật quest: 'Nhặt linh thạch lửa 3 viên, trấn áp hỏa linh'. Ba đệ tử ngoại môn cười nhạo, và Linh Vân trả lời bằng một cú lửa đánh gãy tay họ."
+      ],
+      "cliffhanger": "Chapter 1: Lời thề trời mây — ngoại môn Lâm Uyên vừa bị đạp xuống vách, vừa chạm vào lược gỗ cổ khi trời vẫn còn đỏ. Tiếng hệ thống có giọng nữ khàn khàn vang lên: 'Lôi Linh căn, đánh thức đi'. Một tia sáng xuyên vào ngực, truyền vào tay kiếm nhỏ, mềm con, hô hấp quay tít. Cô không phải phàm nhân nữa. Hệ thống bật quest: 'Nhặt linh thạch lửa 3 viên, trấn áp hỏa linh'. Ba đệ tử ngoại môn cười nhạo, và Linh Vân trả lời bằng một cú lửa đánh gãy tay họ."
+    },
+    {
+      "title": "Chapter 2",
+      "sections": [
+        "Chapter 2: Bí cảnh Huyền Vân — truyền thừa đang ở trong mạch nước cũ nhưng bị bảo hộ ba lớp. Hệ thống cho đề bài: đặt trận pháp 'Phong Vân Chuyển' để mở đường, sau đó thu phục thú linh Huyền Vân. Bố cục hài hước — đạo cô quân tử phát ngôn: 'Để tôi nhìn xem ngoại môn đệ tử nào chọc dân chúng'. Linh Vân mò vào, dùng kiếm khí lôi triều để làm phản hồi lửa, hệ thống phát thêm tag 'bí cảnh'. Cuộc chiến kết thúc với cliffhanger: một người khác dùng lôi kiếp rung động mạch nước."
+      ],
+      "cliffhanger": "Chapter 2: Bí cảnh Huyền Vân — truyền thừa đang ở trong mạch nước cũ nhưng bị bảo hộ ba lớp. Hệ thống cho đề bài: đặt trận pháp 'Phong Vân Chuyển' để mở đường, sau đó thu phục thú linh Huyền Vân. Bố cục hài hước — đạo cô quân tử phát ngôn: 'Để tôi nhìn xem ngoại môn đệ tử nào chọc dân chúng'. Linh Vân mò vào, dùng kiếm khí lôi triều để làm phản hồi lửa, hệ thống phát thêm tag 'bí cảnh'. Cuộc chiến kết thúc với cliffhanger: một người khác dùng lôi kiếp rung động mạch nước."
+    },
+    {
+      "title": "Chapter 3",
+      "sections": [
+        "Chapter 3: Lôi kiếp đầu — Hệ thống mở 'chiến cảnh lôi kiếp'. Linh Vân cần linh lực, thân thể, thần hồn và kinh mạch sạch. Cô bị triệu Vô Kỵ (đệ tử nội môn) ép, và một tâm ma bùng nổ, tạo ra ánh lửa giống hạt thiều. Hệ thống báo 'constellation alignment'. Cô dùng trận pháp triệu phục lôi thú, được thiên đạo buff. Chương dừng với lôi kiếp sắp nổ, hệ thống thèm hỏi 'tiếp tục phi thăng?' và chèn hình ảnh trọng sinh."
+      ],
+      "cliffhanger": "Chapter 3: Lôi kiếp đầu — Hệ thống mở 'chiến cảnh lôi kiếp'. Linh Vân cần linh lực, thân thể, thần hồn và kinh mạch sạch. Cô bị triệu Vô Kỵ (đệ tử nội môn) ép, và một tâm ma bùng nổ, tạo ra ánh lửa giống hạt thiều. Hệ thống báo 'constellation alignment'. Cô dùng trận pháp triệu phục lôi thú, được thiên đạo buff. Chương dừng với lôi kiếp sắp nổ, hệ thống thèm hỏi 'tiếp tục phi thăng?' và chèn hình ảnh trọng sinh."
+    },
+    {
+      "title": "Chapter 4",
+      "sections": [
+        "Chapter 4: Lần phi thăng đầu — sau lôi kiếp , ngoại môn có dấu hiệu chuyển sinh. Linh Vân quyết định dùng khí vận 'nghịch thiên cải mệnh'. Tông môn bấy giờ biểu quyết: bạn được thăng cấp, nhưng phải hi sinh linh lực, phải chấp nhận tông môn khác. Chương kết với hook: vừa định phi thăng thì một văn tự xuất hiện: 'Thiên mệnh đã ghi: ngươi là người về sau sẽ phá hệ thống'."
+      ],
+      "cliffhanger": "Chapter 4: Lần phi thăng đầu — sau lôi kiếp , ngoại môn có dấu hiệu chuyển sinh. Linh Vân quyết định dùng khí vận 'nghịch thiên cải mệnh'. Tông môn bấy giờ biểu quyết: bạn được thăng cấp, nhưng phải hi sinh linh lực, phải chấp nhận tông môn khác. Chương kết với hook: vừa định phi thăng thì một văn tự xuất hiện: 'Thiên mệnh đã ghi: ngươi là người về sau sẽ phá hệ thống'."
+    },
+    {
+      "title": "Chapter 5",
+      "sections": [
+        "Setup: Chapter 5: Xuyên Không Lôi Linh — continuation beat 5. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    }
   ],
   "chapterDetails": [
-    {"title": "Chapter 1", "sections": ["Khởi động hệ thống Lôi Linh", "Trận pháp Hỏa Mạch", "Đè bẹp cười nhạo"], "cliffhanger": "Linh Vân vừa mở mắt đã thấy hệ thống đếm ngược lôi kiếp"},
-    {"title": "Chapter 2", "sections": ["Bí cảnh Huyền Vân", "Trận pháp phong", "Đối thủ mới"], "cliffhanger": "Ai đó sử dụng lôi kiếp thứ nhất"},
-    {"title": "Chapter 3", "sections": ["Hệ thống tra khảo", "Tâm ma bộc phát", "Lôi thú hộ pháp"], "cliffhanger": "Thiên đạo gõ cửa hỏi: có chịu đỡ lôi kiếp không?"},
-    {"title": "Chapter 4", "sections": ["Phi thăng đầu", "Khí vận nghịch thiên", "Tiền đồ tông môn"], "cliffhanger": "Bảng nhiệm vụ ghi: 'Ngươi là kẻ phá hệ thống'"}
+    {
+      "title": "Chapter 1",
+      "sections": [
+        "Khởi động hệ thống Lôi Linh",
+        "Trận pháp Hỏa Mạch",
+        "Đè bẹp cười nhạo"
+      ],
+      "cliffhanger": "Linh Vân vừa mở mắt đã thấy hệ thống đếm ngược lôi kiếp"
+    },
+    {
+      "title": "Chapter 2",
+      "sections": [
+        "Bí cảnh Huyền Vân",
+        "Trận pháp phong",
+        "Đối thủ mới"
+      ],
+      "cliffhanger": "Ai đó sử dụng lôi kiếp thứ nhất"
+    },
+    {
+      "title": "Chapter 3",
+      "sections": [
+        "Hệ thống tra khảo",
+        "Tâm ma bộc phát",
+        "Lôi thú hộ pháp"
+      ],
+      "cliffhanger": "Thiên đạo gõ cửa hỏi: có chịu đỡ lôi kiếp không?"
+    },
+    {
+      "title": "Chapter 4",
+      "sections": [
+        "Phi thăng đầu",
+        "Khí vận nghịch thiên",
+        "Tiền đồ tông môn"
+      ],
+      "cliffhanger": "Bảng nhiệm vụ ghi: 'Ngươi là kẻ phá hệ thống'"
+    }
   ],
   "next_paths": [
-    {"id": "path-linh-canh", "title": "Linh cảnh Hóa Thần", "description": "Truyền thừa gọi ta lên thiên không", "focus": "ảnh hưởng lôi kiếp", "tags": ["lôi kiếp", "huyền huyễn"]}
+    {
+      "id": "story-xuyen-khong-linh-path-1",
+      "title": "Scale the drifting citadel",
+      "description": "Skyships glow with signal fires, urging the crew to witness its council of ghosts. The lingering echo: Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked.",
+      "focus": "trận pháp · drifting citadel"
+    },
+    {
+      "id": "story-xuyen-khong-linh-path-2",
+      "title": "Shadow the dissenting envoy",
+      "description": "Disguises and furtive notes will reveal the pact that could tilt the court. The lingering echo: Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked.",
+      "focus": "trận pháp · dissenting envoy"
+    },
+    {
+      "id": "story-xuyen-khong-linh-path-3",
+      "title": "Uncover the hypernet leak",
+      "description": "Binary rain and forged transmissions point to a traitor near the core. The lingering echo: Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked.",
+      "focus": "trận pháp · hypernet leak"
+    }
   ],
   "world": {
     "tier": "phàm vực",
@@ -55,5 +157,7 @@
     "romanceLevel": 1,
     "comedyLevel": 2,
     "darknessLevel": 1
-  }
+  },
+  "genre": "Fantasy",
+  "created_at": "2026-03-22T17:15:02.341388Z"
 }

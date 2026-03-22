@@ -4,7 +4,7 @@ import os
 import random
 from datetime import datetime
 from pathlib import Path
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
@@ -29,9 +29,21 @@ auth_logger.setLevel(logging.WARNING)
 
 AUTH_TOKEN = os.environ.get('STORY_API_TOKEN', 'omni-token')
 
+CULTIVATION_CONFIG_PATH = BASE / 'cultivation_standard_v1.json'
 
-app = FastAPI(title="Story VeryLong")
-app.mount("/static", StaticFiles(directory=STATIC), name="static")
+
+def _load_cultivation_system() -> Dict[str, Any]:
+    if CULTIVATION_CONFIG_PATH.exists():
+        try:
+            return json.loads(CULTIVATION_CONFIG_PATH.read_text())
+        except json.JSONDecodeError:
+            return {}
+    return {}
+
+
+CULTIVATION_SYSTEM = _load_cultivation_system()
+REALM_SEQUENCE = [realm.get('name') for realm in CULTIVATION_SYSTEM.get('realms', []) if realm.get('name')]
+
 
 GENRE_PROMPTS = {
     "Fantasy": "court intrigue, mystic travel, multi-continental war",
@@ -95,85 +107,6 @@ TRENDING_GENRES = [
     },
 ]
 
-
-class StoryRequest(BaseModel):
-    title: str = Field(..., min_length=3)
-    genre: str = Field("Fantasy")
-    tone: str = Field("epic")
-    chapters: int = Field(5, ge=3, le=12)
-    focus: Optional[str] = None
-    language: str = Field("English")
-
-
-class ChapterDetail(BaseModel):
-    title: str
-    sections: List[str]
-    cliffhanger: str
-
-
-class NextPathHint(BaseModel):
-    id: str
-    title: str
-    description: str
-    focus: str
-
-
-class StoryResponse(BaseModel):
-    id: str
-    title: str
-    genre: str
-    tone: str
-    focus: Optional[str] = None
-    outline: List[str]
-    chapters: List[ChapterDetail]
-    summary: str
-    cover: str
-    next_paths: List[NextPathHint]
-    created_at: str
-    language: str
-
-
-class StoryContinueRequest(BaseModel):
-    story_id: str
-    chapters: int = Field(1, ge=1, le=6)
-    tone: Optional[str] = None
-    focus: Optional[str] = None
-    language: Optional[str] = None
-
-
-class TrendingGenre(BaseModel):
-    genre: str
-    headline: str
-    description: str
-    palette: str
-    momentum: int
-    mood_board: List[str]
-
-
-TONE_VIBES = {
-    "epic": {
-        "opening": "Golden standards ripple as ancient drums answer each breath, promising continents of change.",
-        "escalation": "Legions of feeling march in rhyme, carrying prophecies and promises through the halls.",
-        "cliff": "The horizon cracks open with a tide of lightning, daring anyone to name the next command.",
-    },
-    "mysterious": {
-        "opening": "Moonlit corridors exhale breathy secrets that cling to every shoulder.",
-        "escalation": "Shadows braid with whispers, dragging the cast toward a veiled ledger they almost can read.",
-        "cliff": "A sudden hush swallows footsteps, leaving one single lantern flicker to count the betrayals to come.",
-    },
-    "fast": {
-        "opening": "Neon streaks and racing pulses turn each glance into a sprinting frame.",
-        "escalation": "Sirens mash with breathless commands, making leaps between tense arguments and impulsive breaks.",
-        "cliff": "The tempo shatters, the next beat still unwritten, and every throat tightens for the drop.",
-    },
-}
-
-DEFAULT_TONE_VIBE = {
-    "opening": "A restless wind sketches outlines across the stage, pulsing with unnamed intent.",
-    "escalation": "Tension coils with slow heat, daring the players to stretch further than comfort allows.",
-    "cliff": "The air crystalizes, freezing a single question in the throat that will not be answered yet.",
-}
-
 NEXT_PATH_TEMPLATES = [
     (
         "Shadow the dissenting envoy",
@@ -202,37 +135,249 @@ NEXT_PATH_TEMPLATES = [
     ),
 ]
 
+TONE_VIBES = {
+    "epic": {
+        "opening": "Golden standards ripple as ancient drums answer each breath, promising continents of change.",
+        "escalation": "Legions of feeling march in rhyme, carrying prophecies and promises through the halls.",
+        "cliff": "The horizon cracks open with a tide of lightning, daring anyone to name the next command.",
+    },
+    "mysterious": {
+        "opening": "Moonlit corridors exhale breathy secrets that cling to every shoulder.",
+        "escalation": "Shadows braid with whispers, dragging the cast toward a veiled ledger they almost can read.",
+        "cliff": "A sudden hush swallows footsteps, leaving one single lantern flicker to count the betrayals to come.",
+    },
+    "fast": {
+        "opening": "Neon streaks and racing pulses turn each glance into a sprinting frame.",
+        "escalation": "Sirens mash with breathless commands, making leaps between tense arguments and impulsive breaks.",
+        "cliff": "The tempo shatters, the next beat still unwritten, and every throat tightens for the drop.",
+    },
+}
 
-def make_outline(title: str, genre: str, chapters: int) -> List[str]:
-    base = GENRE_PROMPTS.get(genre, "web of intrigue")
-    return [f"Chapter {i}: {title} — {base} scene {i}" for i in range(1, chapters + 1)]
+DEFAULT_TONE_VIBE = {
+    "opening": "A restless wind sketches outlines across the stage, pulsing with unnamed intent.",
+    "escalation": "Tension coils with slow heat, daring the players to stretch further than comfort allows.",
+    "cliff": "The air crystalizes, freezing a single question in the throat that will not be answered yet.",
+}
+
+PACE_PROFILES = {
+    "slow": {
+        "intro": "The camera lingers on ritual and breath, letting every crackle of chi stew for a beat.",
+        "escalation": "Scenes melt into each other like ink, giving the scholar-time to taste the politics.",
+        "cliff": "The cliff hangs with a patient heartbeat as consequences bloom without a rush.",
+    },
+    "medium": {
+        "intro": "Momentum builds with steady strikes, touching on trade, training, and whispers of power.",
+        "escalation": "A layered escalation now blends character, conflict, and cosmic stakes into a single burn.",
+        "cliff": "The cliff edges toward a revelation that promises both danger and reward.",
+    },
+    "fast": {
+        "intro": "Frames smash past each other with bright beats, forcing the reader to keep dancing.",
+        "escalation": "The escalation drags enemies into rapid repositioning and snap rituals.",
+        "cliff": "One pulse later, the cliff explodes—there is no time to catch your breath.",
+    },
+}
 
 
-def _tone_vibe(tone: str) -> dict:
+class StoryWorld(BaseModel):
+    tier: str = Field("phàm vực")
+    setting: str = Field("tiên hiệp cổ đại")
+    powerSystem: str = Field("cultivation_standard_v1")
+
+
+class ProtagonistProfile(BaseModel):
+    name: Optional[str] = None
+    origin: Optional[str] = None
+    talent: Optional[str] = None
+    bodyType: Optional[str] = None
+    primaryPath: Optional[str] = None
+    secondaryPath: Optional[str] = None
+    luck: Optional[str] = None
+
+
+class ProgressionProfile(BaseModel):
+    startRealm: str = Field("Luyện Thể")
+    targetRealm: str = Field("Nguyên Anh")
+    pace: str = Field("medium")
+    substage: Optional[str] = None
+
+
+class FeatureLevels(BaseModel):
+    systemMode: bool = False
+    romanceLevel: int = Field(0, ge=0, le=5)
+    comedyLevel: int = Field(0, ge=0, le=5)
+    darknessLevel: int = Field(0, ge=0, le=5)
+
+
+class StoryMetadata(BaseModel):
+    world: StoryWorld
+    protagonist: Optional[ProtagonistProfile] = None
+    progression: ProgressionProfile
+    features: FeatureLevels
+    continuity: Dict[str, Any] = Field(default_factory=dict)
+    system: Dict[str, Any] = Field(default_factory=dict)
+
+
+class TagMatrix(BaseModel):
+    genres: List[str]
+    subGenres: List[str]
+    toneTags: List[str] = Field(default_factory=list)
+    powerStyles: List[str] = Field(default_factory=list)
+
+
+class StoryRequest(BaseModel):
+    title: str = Field(..., min_length=3)
+    genres: List[str] = Field(default_factory=lambda: ["Fantasy"])
+    subGenres: List[str] = Field(default_factory=list)
+    tone: str = Field("epic")
+    toneTags: List[str] = Field(default_factory=list)
+    powerStyles: List[str] = Field(default_factory=list)
+    focus: Optional[str] = None
+    chapters: int = Field(5, ge=3, le=12)
+    language: str = Field("English")
+    world: StoryWorld = Field(default_factory=StoryWorld)
+    protagonist: Optional[ProtagonistProfile] = None
+    progression: ProgressionProfile = Field(default_factory=ProgressionProfile)
+    features: FeatureLevels = Field(default_factory=FeatureLevels)
+
+
+class ChapterDetail(BaseModel):
+    title: str
+    sections: List[str]
+    cliffhanger: str
+
+
+class NextPathHint(BaseModel):
+    id: str
+    title: str
+    description: str
+    focus: str
+
+
+class StoryResponse(BaseModel):
+    id: str
+    title: str
+    genres: List[str]
+    subGenres: List[str]
+    tone: str
+    toneTags: List[str]
+    powerStyles: List[str]
+    focus: Optional[str] = None
+    outline: List[str]
+    chapters: List[ChapterDetail]
+    summary: str
+    cover: str
+    next_paths: List[NextPathHint]
+    created_at: str
+    updated_at: str
+    language: str
+    tags: List[str] = Field(default_factory=list)
+    metadata: StoryMetadata
+    tag_matrix: TagMatrix
+    prompt: str
+    pacing: str
+
+
+class StoryContinueRequest(BaseModel):
+    story_id: str
+    chapters: int = Field(1, ge=1, le=6)
+    tone: Optional[str] = None
+    focus: Optional[str] = None
+    language: Optional[str] = None
+    genres: Optional[List[str]] = None
+    subGenres: Optional[List[str]] = None
+    toneTags: Optional[List[str]] = None
+    powerStyles: Optional[List[str]] = None
+    progression: Optional[ProgressionProfile] = None
+    features: Optional[FeatureLevels] = None
+
+
+class TrendingGenre(BaseModel):
+    genre: str
+    headline: str
+    description: str
+    palette: str
+    momentum: int
+    mood_board: List[str]
+
+
+app = FastAPI(title="Story VeryLong")
+app.mount("/static", StaticFiles(directory=STATIC), name="static")
+
+
+def _tone_vibe(tone: str) -> Dict[str, str]:
     return TONE_VIBES.get(tone, DEFAULT_TONE_VIBE)
 
 
-def _focus_phrase(focus: Optional[str]) -> str:
-    if focus:
-        return focus.strip()
-    return "a restless current of ambition"
+def _pace_profile(pace: str) -> Dict[str, str]:
+    return PACE_PROFILES.get(pace, PACE_PROFILES['medium'])
 
 
-def craft_chapter(index: int, outline_line: str, tone: str, focus: Optional[str]) -> dict:
+def _build_tag_matrix(request: StoryRequest) -> TagMatrix:
+    tone_tags = [request.tone, *request.toneTags]
+    power_styles = request.powerStyles or []
+    return TagMatrix(
+        genres=request.genres,
+        subGenres=request.subGenres,
+        toneTags=list(dict.fromkeys(tone_tags)),
+        powerStyles=list(dict.fromkeys(power_styles)),
+    )
+
+
+def _build_tag_list(matrix: TagMatrix) -> List[str]:
+    combined = [*matrix.genres, *matrix.subGenres, *matrix.toneTags, *matrix.powerStyles]
+    return list(dict.fromkeys([tag for tag in combined if tag]))
+
+
+def _progression_hint(progression: ProgressionProfile, chapter_index: int) -> str:
+    star = progression.startRealm
+    target = progression.targetRealm
+    stage = progression.substage or "sơ kỳ"
+    return f"Progressing from {star} ({stage}) toward {target} at a {progression.pace} pace. Chapter {chapter_index} deepens that climb."
+
+
+def build_story_prompt(request: StoryRequest, matrix: TagMatrix) -> str:
+    tags_line = ", ".join(matrix.genres + matrix.subGenres)
+    tone_line = request.tone
+    focus_line = request.focus or "a restless current of ambition"
+    pacing = request.progression.pace
+    features = request.features
+    system_code = CULTIVATION_SYSTEM.get('systemCode', 'cultivation_standard_v1')
+    return (
+        f"You are writing a cultivation saga with tags [{tags_line}] and tone {tone_line}. "
+        f"The focus is on {focus_line}. Use the {system_code} ruleset and keep progression from "
+        f"{request.progression.startRealm} to {request.progression.targetRealm} at a {pacing} pace. "
+        f"Honor system={features.systemMode}, romance={features.romanceLevel}, comedy={features.comedyLevel}, darkness={features.darknessLevel}. "
+        "Each chapter must show power growth, political friction, or secret mileage while ending on a hook."
+    )
+
+
+def make_outline(request: StoryRequest) -> List[str]:
+    base_prompt = ", ".join(request.genres) or "multi-genre arc"
+    progression = request.progression
+    extra = f" ({progression.startRealm}→{progression.targetRealm}, {progression.pace} pace)"
+    chapters = max(3, min(request.chapters, 12))
+    return [
+        f"Chapter {i}: {request.title} — {base_prompt}{extra} scene {i}"
+        for i in range(1, chapters + 1)
+    ]
+
+
+def craft_chapter(index: int, outline_line: str, tone: str, focus: Optional[str], progression: ProgressionProfile, features: FeatureLevels, matrix: TagMatrix) -> dict:
     vibe = _tone_vibe(tone)
-    focus_text = _focus_phrase(focus)
+    pace = _pace_profile(progression.pace)
+    focus_text = focus.strip() if focus else "a restless current of ambition"
     focus_sentence = f"Focus threads the narrative through {focus_text}."
+    power_styles = matrix.powerStyles
+    system_note = "" if not features.systemMode else "System mode is scoring quests."  
+    hero_sentence = f"Power styles: {', '.join(power_styles)}." if power_styles else ""
     opening = (
-        f"Setup: {outline_line}. {vibe['opening']} {focus_sentence} "
-        "Cameras drift across gestures, letting the viewer absorb key stakes."
+        f"Setup: {outline_line}. {vibe['opening']} {pace['intro']} {focus_sentence} {system_note}"
     )
     escalation = (
-        f"Escalation: {vibe['escalation']} {focus_sentence} "
-        "Allies and rivals move like choreography, each beat stretching the drama longer."
+        f"Escalation: {vibe['escalation']} {pace['escalation']} {hero_sentence} {focus_sentence}"
     )
     cliffhanger = (
-        f"Cliffhanger: {vibe['cliff']} {focus_sentence} "
-        "No answer yet arrives, and every door within the scene remains locked."
+        f"Cliffhanger: {vibe['cliff']} {pace['cliff']} {focus_sentence}"
     )
     title = f"Chapter {index}"
     return {
@@ -242,38 +387,39 @@ def craft_chapter(index: int, outline_line: str, tone: str, focus: Optional[str]
     }
 
 
-def generate_next_paths(story_id: str, last_cliffhanger: str, tone: str, focus: Optional[str], count: int = 3) -> List[dict]:
+def generate_next_paths(story_id: str, last_cliffhanger: str, tone: str, focus: Optional[str], progression: ProgressionProfile, count: int = 3) -> List[dict]:
     pool = NEXT_PATH_TEMPLATES.copy()
     selected = random.sample(pool, k=min(count, len(pool)))
-    anchor = focus or tone
+    anchor = focus or tone or progression.startRealm
     cliff_note = f" The lingering echo: {last_cliffhanger}" if last_cliffhanger else ""
     hints = []
     for idx, (title, description, focus_snippet) in enumerate(selected, start=1):
+        description_text = f"{description} — {progression.startRealm} to {progression.targetRealm}."
         hints.append(
             {
                 "id": f"{story_id}-path-{idx}",
                 "title": title,
-                "description": f"{description}{cliff_note}",
+                "description": f"{description_text}{cliff_note}",
                 "focus": f"{anchor} · {focus_snippet}",
             }
         )
     return hints
 
 
-def persist_story(payload: dict) -> Path:
+def persist_story(payload: Dict[str, Any]) -> Path:
     slug = payload["id"]
     path = STORIES / f"{slug}.json"
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
     return path
 
 
-def normalize_story_data(story: dict) -> dict:
+def normalize_story_data(story: Dict[str, Any]) -> Dict[str, Any]:
     normalized = False
-    raw_chapters = story.get("chapters", [])
-    chapters: List[dict] = []
-    for idx, chapter in enumerate(raw_chapters, start=1):
+    chapters = story.get("chapters", [])
+    normalized_chapters = []
+    for idx, chapter in enumerate(chapters, start=1):
         if isinstance(chapter, dict) and "sections" in chapter and "cliffhanger" in chapter:
-            chapters.append(chapter)
+            normalized_chapters.append(chapter)
         else:
             text = chapter if isinstance(chapter, str) else str(chapter)
             simple = {
@@ -281,32 +427,38 @@ def normalize_story_data(story: dict) -> dict:
                 "sections": [text],
                 "cliffhanger": text,
             }
-            chapters.append(simple)
+            normalized_chapters.append(simple)
             normalized = True
-    story["chapters"] = chapters
-    if "genre" not in story:
-        story["genre"] = story.get("genre", "Fantasy")
+    story["chapters"] = normalized_chapters
+    if "metadata" not in story:
+        story["metadata"] = {
+            "world": StoryWorld().dict(),
+            "protagonist": None,
+            "progression": ProgressionProfile().dict(),
+            "features": FeatureLevels().dict(),
+            "continuity": {},
+            "system": {
+                "code": CULTIVATION_SYSTEM.get('systemCode'),
+                "version": CULTIVATION_SYSTEM.get('version'),
+                "tags": CULTIVATION_SYSTEM.get('tags', {}),
+            },
+        }
         normalized = True
-    if "tone" not in story:
-        story["tone"] = story.get("tone", "epic")
+    if "tags" not in story:
+        story["tags"] = []
         normalized = True
-    if "focus" not in story:
-        story["focus"] = story.get("focus")
-    if not story.get("next_paths") and chapters:
-        cliff = chapters[-1].get("cliffhanger", "")
-        story["next_paths"] = generate_next_paths(
-            story["id"],
-            cliff,
-            story.get("tone", "epic"),
-            story.get("focus"),
-        )
+    if "tag_matrix" not in story:
+        story["tag_matrix"] = {"genres": [], "subGenres": [], "toneTags": [], "powerStyles": []}
+        normalized = True
+    if "updated_at" not in story:
+        story["updated_at"] = story.get("created_at", datetime.utcnow().isoformat() + "Z")
         normalized = True
     if normalized:
         persist_story(story)
     return story
 
 
-def load_story(slug: str) -> Optional[dict]:
+def load_story(slug: str) -> Optional[Dict[str, Any]]:
     file = STORIES / f"{slug}.json"
     if not file.exists():
         return None
@@ -314,7 +466,7 @@ def load_story(slug: str) -> Optional[dict]:
     return normalize_story_data(story)
 
 
-def summarize_story(chapters: List[dict]) -> str:
+def summarize_story(chapters: List[Dict[str, Any]]) -> str:
     snippets: List[str] = []
     for chapter in chapters[:2]:
         section = chapter.get("sections", [])
@@ -325,7 +477,7 @@ def summarize_story(chapters: List[dict]) -> str:
     return " | ".join(snippets) if snippets else ""
 
 
-def authorize(request: Request):
+def authorize(request: Request) -> None:
     client_ip = request.client.host if request.client else 'unknown'
     auth_header = request.headers.get('Authorization', '')
     if not auth_header.startswith('Bearer '):
@@ -337,33 +489,84 @@ def authorize(request: Request):
         raise HTTPException(status_code=403, detail='Invalid token')
 
 
+def _advance_progression(progression: ProgressionProfile, chapters_written: int) -> ProgressionProfile:
+    thresholds = {
+        "fast": 3,
+        "medium": 5,
+        "slow": 8,
+    }
+    select_threshold = thresholds.get(progression.pace, 5)
+    if not REALM_SEQUENCE:
+        progression.substage = progression.substage or "sơ kỳ"
+        return progression
+    if chapters_written >= select_threshold and progression.startRealm in REALM_SEQUENCE:
+        current_idx = REALM_SEQUENCE.index(progression.startRealm)
+        next_idx = min(current_idx + 1, len(REALM_SEQUENCE) - 1)
+        progression.startRealm = REALM_SEQUENCE[next_idx]
+    progression.substage = progression.substage or "sơ kỳ"
+    return progression
+
+
+def _build_metadata(request: StoryRequest, chapter_count: int) -> StoryMetadata:
+    matrix = _build_tag_matrix(request)
+    metadata = StoryMetadata(
+        world=request.world,
+        protagonist=request.protagonist,
+        progression=_advance_progression(request.progression, chapter_count),
+        features=request.features,
+        continuity={
+            "focus": request.focus,
+            "chapter_hint": _progression_hint(request.progression, chapter_count),
+        },
+        system={
+            "code": CULTIVATION_SYSTEM.get('systemCode'),
+            "version": CULTIVATION_SYSTEM.get('version'),
+            "tags": CULTIVATION_SYSTEM.get('tags', {}),
+        },
+    )
+    return metadata
+
+
 @app.post("/api/story", dependencies=[Depends(authorize)], response_model=StoryResponse)
 def build_story(pr: StoryRequest):
     slug = f"story-{int(datetime.utcnow().timestamp())}"
-    outline = make_outline(pr.title, pr.genre, pr.chapters)
-    chapter_structures = [
-        craft_chapter(idx, line, pr.tone, pr.focus)
+    outline = make_outline(pr)
+    matrix = _build_tag_matrix(pr)
+    tag_list = _build_tag_list(matrix)
+    chapters = [
+        craft_chapter(idx, line, pr.tone, pr.focus, pr.progression, pr.features, matrix)
         for idx, line in enumerate(outline, start=1)
     ]
+    metadata = _build_metadata(pr, len(chapters))
     next_paths = generate_next_paths(
         slug,
-        chapter_structures[-1]["cliffhanger"],
+        chapters[-1]["cliffhanger"],
         pr.tone,
         pr.focus,
+        pr.progression,
     )
     response = {
         "language": pr.language,
         "id": slug,
         "title": pr.title,
-        "genre": pr.genre,
+        "genres": pr.genres,
+        "subGenres": pr.subGenres,
         "tone": pr.tone,
+        "toneTags": pr.toneTags,
+        "powerStyles": pr.powerStyles,
         "focus": pr.focus,
         "outline": outline,
-        "chapters": chapter_structures,
-        "summary": summarize_story(chapter_structures),
-        "cover": f"A {pr.genre} odyssey in {pr.tone} tone",
+        "chapters": chapters,
+        "summary": summarize_story(chapters),
+        "cover": f"A {tag_list[0] if tag_list else pr.genres[0]} odyssey in {pr.tone} tone",
         "next_paths": next_paths,
         "created_at": datetime.utcnow().isoformat() + "Z",
+        "updated_at": datetime.utcnow().isoformat() + "Z",
+        "tags": tag_list,
+        "metadata": metadata.dict(),
+        "tag_matrix": matrix.dict(),
+        "prompt": build_story_prompt(pr, matrix),
+        "pacing": pr.progression.pace,
     }
     persist_story(response)
     return response
@@ -377,15 +580,47 @@ def continue_story(req: StoryContinueRequest):
     tone = req.tone or story.get('tone', 'epic')
     focus = req.focus or story.get('focus')
     language = req.language or story.get('language', 'English')
+    genres = req.genres or story.get('genres', ['Fantasy'])
+    sub_genres = req.subGenres or story.get('subGenres', [])
+    tone_tags = req.toneTags or story.get('toneTags', [])
+    power_styles = req.powerStyles or story.get('powerStyles', [])
+    existing_metadata = story.get('metadata', {})
+    existing_progression = ProgressionProfile(**existing_metadata.get('progression', {})) if existing_metadata else ProgressionProfile()
+    if req.progression:
+        existing_progression = req.progression
+    features = req.features or FeatureLevels(**existing_metadata.get('features', {}))
+    existing_progression = _advance_progression(existing_progression, len(story.get('chapters', [])))
     story['tone'] = tone
     story['focus'] = focus
     story['language'] = language
-    new_outlines = []
+    story['genres'] = genres
+    story['subGenres'] = sub_genres
+    story['toneTags'] = tone_tags
+    story['powerStyles'] = power_styles
+    matrix = TagMatrix(genres=genres, subGenres=sub_genres, toneTags=tone_tags or [tone], powerStyles=power_styles)
+    story['tag_matrix'] = matrix.dict()
+    story['tags'] = _build_tag_list(matrix)
+    story['metadata'] = StoryMetadata(
+        world=StoryWorld(**existing_metadata.get('world', {})),
+        protagonist=ProtagonistProfile(**existing_metadata.get('protagonist', {})) if existing_metadata.get('protagonist') else None,
+        progression=existing_progression,
+        features=features,
+        continuity={
+            "focus": focus,
+            "chapter_hint": _progression_hint(existing_progression, len(story.get('chapters', [])) + req.chapters),
+        },
+        system={
+            "code": CULTIVATION_SYSTEM.get('systemCode'),
+            "version": CULTIVATION_SYSTEM.get('version'),
+            "tags": CULTIVATION_SYSTEM.get('tags', {}),
+        },
+    ).dict()
     start = len(story['outline']) + 1
+    new_outlines = []
     for i in range(start, start + req.chapters):
         new_outlines.append(f"Chapter {i}: {story['title']} — continuation beat {i}")
     new_chapters = [
-        craft_chapter(i, line, tone, focus)
+        craft_chapter(i, line, tone, focus, existing_progression, features, TagMatrix(**story['tag_matrix']))
         for i, line in enumerate(new_outlines, start=start)
     ]
     story['outline'].extend(new_outlines)
@@ -396,8 +631,29 @@ def continue_story(req: StoryContinueRequest):
         story['chapters'][-1]['cliffhanger'],
         tone,
         focus,
+        existing_progression,
     )
-    story['created_at'] = datetime.utcnow().isoformat() + 'Z'
+    story['created_at'] = story.get('created_at', datetime.utcnow().isoformat() + 'Z')
+    story['updated_at'] = datetime.utcnow().isoformat() + 'Z'
+    story['prompt'] = build_story_prompt(
+        StoryRequest(
+            title=story['title'],
+            genres=genres,
+            subGenres=sub_genres,
+            tone=tone,
+            toneTags=tone_tags or [tone],
+            powerStyles=power_styles,
+            focus=focus,
+            chapters=len(story['chapters']),
+            world=StoryWorld(**story['metadata']['world']) if story['metadata'].get('world') else StoryWorld(),
+            protagonist=ProtagonistProfile(**story['metadata']['protagonist']) if story['metadata'].get('protagonist') else None,
+            progression=existing_progression,
+            features=features,
+            language=language,
+        ),
+        TagMatrix(**story['tag_matrix']),
+    )
+    story['pacing'] = existing_progression.pace
     persist_story(story)
     return story
 
@@ -406,19 +662,27 @@ def continue_story(req: StoryContinueRequest):
 def list_stories():
     return [p.stem for p in STORIES.glob("*.json")]
 
+
 @app.get("/api/story/list")
 def story_list():
-    results=[]
+    results = []
     for path in STORIES.glob("*.json"):
-        story=normalize_story_data(json.loads(path.read_text()))
+        story = normalize_story_data(json.loads(path.read_text()))
         results.append({
-            "id":story["id"],
-            "title":story["title"],
-            "genre":story.get("genre","Fantasy"),
-            "tone":story.get("tone","epic"),
-            "summary":story.get("summary",""),
-            "language":story.get("language","English"),
-            "chapters":story.get("chapters",[]),
+            "id": story["id"],
+            "title": story["title"],
+            "summary": story.get("summary", ""),
+            "language": story.get("language", "English"),
+            "chapters": story.get("chapters", []),
+            "tags": story.get("tags", []),
+            "genres": story.get("genres", []),
+            "subGenres": story.get("subGenres", []),
+            "tone": story.get("tone", "epic"),
+            "toneTags": story.get("toneTags", []),
+            "powerStyles": story.get("powerStyles", []),
+            "metadata": story.get("metadata", {}),
+            "pacing": story.get("pacing", story.get("metadata", {}).get("progression", {}).get("pace", "medium")),
+            "updated_at": story.get("updated_at", story.get("created_at")),
         })
     return results
 
@@ -426,6 +690,11 @@ def story_list():
 @app.get("/api/trending", response_model=List[TrendingGenre])
 def get_trending():
     return TRENDING_GENRES
+
+
+@app.get("/api/system/cultivation")
+def cultivation_system():
+    return CULTIVATION_SYSTEM
 
 
 @app.get("/")

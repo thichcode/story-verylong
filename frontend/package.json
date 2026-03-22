@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "node ../scripts/copy_stories.js && next dev",
+    "build": "node ../scripts/copy_stories.js && next build",
+    "start": "node ../scripts/copy_stories.js && next start"
   },
   "dependencies": {
     "clsx": "^2.1.1",

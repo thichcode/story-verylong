@@ -5,23 +5,41 @@ import path from 'path';
 type StoryCard = {
   id: string;
   title: string;
-  genre: string;
-  tone: string;
   summary: string;
   language?: string;
-  chapters?: number;
+  chapters?: any[];
+  tags: string[];
+  genres: string[];
+  subGenres: string[];
+  tone: string;
+  toneTags: string[];
+  powerStyles: string[];
+  pacing: string;
+  updatedAt?: string;
+  metadata?: Record<string, any>;
 };
 
-const STORIES_DIR = path.resolve(process.cwd(), 'stories');
+const STORIES_DIR = path.resolve(process.cwd(), '..', 'stories');
 
 const normalize = (data: any): StoryCard => ({
   id: data.id,
   title: data.title,
-  genre: data.genre ?? 'Fantasy',
+  genres: data.genres ?? (data.genre ? [data.genre] : ['Fantasy']),
+  subGenres: data.subGenres ?? [],
   tone: data.tone ?? 'epic',
+  toneTags: data.toneTags ?? [data.tone ?? 'epic'],
+  powerStyles: data.powerStyles ?? [],
+  pacing: data.pacing ?? 'medium',
+  tags:
+    data.tags ??
+    Array.from(new Set([...(data.genres || []), ...(data.subGenres || []), data.tone ?? 'epic'])).filter(
+      Boolean
+    ),
   summary: data.summary ?? data.chapters?.[0]?.sections?.[0] ?? '',
   language: data.language ?? 'English',
   chapters: data.chapters?.length ?? 0,
+  updatedAt: data.updated_at ?? data.updatedAt,
+  metadata: data.metadata ?? {},
 });
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
