@@ -96,7 +96,6 @@ const ReaderPage = () => {
 
   useEffect(() => {
     if (!story) return;
-    const state = { chapterIdx, scroll: window.scrollY };
     const key = `reader-progress-${story.id}`;
     const stored = localStorage.getItem(key);
     if (stored) {
@@ -104,11 +103,17 @@ const ReaderPage = () => {
       setChapterIdx(parsed.chapterIdx ?? 0);
       window.scrollTo(0, parsed.scroll ?? 0);
     }
-    const save = () => localStorage.setItem(key, JSON.stringify(state));
-    const handler = () => save();
-    window.addEventListener('scroll', handler);
-    return () => window.removeEventListener('scroll', handler);
-  }, [chapterIdx, story]);
+  }, [story?.id]);
+
+  useEffect(() => {
+    if (!story) return;
+    const key = `reader-progress-${story.id}`;
+    const save = () =>
+      localStorage.setItem(key, JSON.stringify({ chapterIdx, scroll: window.scrollY }));
+    window.addEventListener('scroll', save);
+    save();
+    return () => window.removeEventListener('scroll', save);
+  }, [chapterIdx, story?.id]);
 
   return (
     <div className={styles.readerPage} data-theme={theme}>
