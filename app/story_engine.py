@@ -220,7 +220,7 @@ class StoryRequest(BaseModel):
     powerStyles: List[str] = Field(default_factory=list)
     focus: Optional[str] = None
     chapters: int = Field(5, ge=3, le=12)
-    language: str = Field("English")
+    language: str = Field("Tiếng Việt")
     world: StoryWorld = Field(default_factory=StoryWorld)
     protagonist: Optional[ProtagonistProfile] = None
     progression: ProgressionProfile = Field(default_factory=ProgressionProfile)
@@ -336,12 +336,13 @@ def build_story_prompt(request: StoryRequest, matrix: TagMatrix) -> str:
     pacing = request.progression.pace
     features = request.features
     system_code = CULTIVATION_SYSTEM.get('systemCode', 'cultivation_standard_v1')
+    language_line = f"Write the story in {request.language}." if request.language else ""  # type: ignore
     return (
         f"You are writing a cultivation saga with tags [{tags_line}] and tone {tone_line}. "
         f"The focus is on {focus_line}. Use the {system_code} ruleset and keep progression from "
         f"{request.progression.startRealm} to {request.progression.targetRealm} at a {pacing} pace. "
         f"Honor system={features.systemMode}, romance={features.romanceLevel}, comedy={features.comedyLevel}, darkness={features.darknessLevel}. "
-        "Each chapter must show power growth, political friction, or secret mileage while ending on a hook."
+        f"{language_line} Each chapter must show power growth, political friction, or secret mileage while ending on a hook."
     )
 
 
@@ -552,13 +553,24 @@ class StoryGenerator:
             return sections[-1]
         return text.strip()
 
-    def _build_chapter_prompt(self, index: int, outline_line: str, request: StoryRequest, matrix: TagMatrix) -> str:
+    def _chapter_context_summary(self, chapters: List[Dict[str, Any]], limit: int = 2) -> str:
+        if not chapters:
+            return ""
+        snippets = []
+        for chapter in chapters[-limit:]:
+            sections = chapter.get("sections", [])
+            text_snippet = sections[0] if sections else chapter.get("cliffhanger", "")
+            if text_snippet:
+                snippets.append(f"{chapter.get('title', 'Pending Chapter')}: {text_snippet[:200]}".strip())
+        return "\n".join(snippets)
+
+    def _build_chapter_prompt(self, index: int, outline_line: str, request: StoryRequest, matrix: TagMatrix, progression: ProgressionProfile, features: FeatureLevels, previous_context: Optional[str] = None) -> str:
         focus = request.focus or "a restless current of ambition"
         base_prompt = build_story_prompt(request, matrix)
         tags = ", ".join(matrix.genres + matrix.subGenres)
-        features = request.features
+        context_block = f"\nPrevious chapters:\n{previous_context}\n" if previous_context else ""
         return (
-            f"{base_prompt}\n"
+            f"{base_prompt}{context_block}\n"
             f"Chapter {index}: {outline_line}\n"
             f"Focus thread: {focus}.\n"
             f"Tone: {request.tone}, Pace: {request.progression.pace}.\n"
@@ -567,8 +579,8 @@ class StoryGenerator:
             "Break the chapter into 2-3 vivid sections separated by blank lines and end on a cliffhanger sentence."
         )
 
-    def _generate_chapter(self, index: int, outline_line: str, request: StoryRequest, matrix: TagMatrix, progression: ProgressionProfile, features: FeatureLevels) -> Tuple[Dict[str, Any], bool, str]:
-        prompt = self._build_chapter_prompt(index, outline_line, request, matrix)
+    def _generate_chapter(self, index: int, outline_line: str, request: StoryRequest, matrix: TagMatrix, progression: ProgressionProfile, features: FeatureLevels, previous_context: Optional[str] = None) -> Tuple[Dict[str, Any], bool, str]:
+        prompt = self._build_chapter_prompt(index, outline_line, request, matrix, progression, features, previous_context)
         llama_output, fallback = self._invoke_llama(prompt)
         if not fallback and llama_output:
             sections = self._split_sections(llama_output)
@@ -588,7 +600,16 @@ class StoryGenerator:
         chapter_prompts: List[str] = []
         for offset, outline_line in enumerate(outlines):
             chapter_number = start_index + offset
-            chapter, fallback, prompt = self._generate_chapter(chapter_number, outline_line, request, matrix, progression, features)
+            previous_context = self._chapter_context_summary(chapters, limit=2)
+            chapter, fallback, prompt = self._generate_chapter(
+                chapter_number,
+                outline_line,
+                request,
+                matrix,
+                progression,
+                features,
+                previous_context if previous_context else None,
+            )
             chapters.append(chapter)
             fallback_used = fallback_used or fallback
             chapter_prompts.append(prompt)
@@ -682,7 +703,7 @@ class StoryGenerator:
             return None
         tone = continue_request.tone or story.get('tone', 'epic')
         focus = continue_request.focus or story.get('focus')
-        language = continue_request.language or story.get('language', 'English')
+        language = continue_request.language or story.get('language', 'Tiếng Việt')
         genres = continue_request.genres or story.get('genres', ['Fantasy'])
         sub_genres = continue_request.subGenres or story.get('subGenres', [])
         tone_tags = continue_request.toneTags or story.get('toneTags', [])

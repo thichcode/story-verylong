@@ -22,6 +22,7 @@ Set environment variables for deployment:
 
 ## Story generation pipeline
 Use `scripts/story_pipeline.py` to generate a sample story and save it under `stories/`.
+- Prompts now append a short summary of the two most recent chapters and reiterate the story language (default `Tiếng Việt`) so llama.cpp stays on a coherent arc instead of reusing the same beats.
 
 ### Cultivation metadata & prompt builder
 - The generator consumes `cultivation_standard_v1.json` to keep realm progressions, tags, and arc templates consistent.

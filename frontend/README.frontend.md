@@ -3,6 +3,7 @@
 ## Hero & Command Deck
 - Rebuilt the hero into a glassy command deck layered with parallax spotlight gradients, neon glow beams, and a responsive motion accent. The CTA now flickers with a luminous animation and still targets `/api/ai/generate`, letting the UI queue cinematic sagas right from the hero.
 - Live stats (progression, chapters, update time) sit over a blurred, glass-like card while glowing gradients reinforce the cinematic mood.
+- The backend now requests stories in `Tiếng Việt` and feeds prompts an excerpt of the last two chapters, so the UI’s ticker, trending slider, and reader spotlight stay consistent without looping over the same sentences.
 
 ## Trending slider & pipeline ticker
 - Added a horizontally scrolling `Trending sagas` slider so the freshest stories drift like film strips, complete with neon titles, chapter counts, and hover glows.

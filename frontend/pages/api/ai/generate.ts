@@ -4,25 +4,25 @@ const BACKEND_URL = process.env.STORY_API_URL || process.env.NEXT_PUBLIC_API_URL
 const API_TOKEN = process.env.STORY_API_TOKEN || process.env.NEXT_PUBLIC_API_TOKEN;
 
 const DEFAULT_PAYLOAD = {
-  title: 'Signal in the Ember Citadel',
-  genres: ['Fantasy', 'Sci-Fi'],
-  subGenres: ['Neon Court', 'Arcane Engineering'],
-  tone: 'mysterious',
-  toneTags: ['mystic radio', 'directive pulse'],
-  powerStyles: ['systemic intrigue'],
-  focus: 'tracking a rogue gateway signal through sky-forged courts',
+  title: 'Đêm Hành Thành Lửa Tuyệt',
+  genres: ['Xuyên không', 'Tu tiên'],
+  subGenres: ['Bí cảnh', 'Tông môn'],
+  tone: 'sảng văn',
+  toneTags: ['sáng chấn', 'kỹ năng'],
+  powerStyles: ['trận pháp', 'linh khí chiếu sáng'],
+  focus: 'vạch ra hệ thống bí mật của rìa thiên đạo và giữ cân bằng với các đệ tử ngoại môn',
   chapters: 4,
-  language: 'English',
+  language: 'Tiếng Việt',
   progression: {
     startRealm: 'Luyện Thể',
     targetRealm: 'Nguyên Anh',
-    pace: 'fast',
+    pace: 'medium',
   },
   features: {
     systemMode: true,
-    romanceLevel: 2,
+    romanceLevel: 1,
     comedyLevel: 1,
-    darknessLevel: 3,
+    darknessLevel: 2,
   },
 };
 
