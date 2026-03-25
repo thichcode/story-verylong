@@ -16,5 +16,6 @@
 ## Reader experience
 - The reader page now embraces gradient light beams, glassmorphic main panels, and backdrop-filter treatments so the content feels clipped inside a holo-safe room.
 - Sticky header/toolbars sport blurred glass, ionic borders, and responsive stacking for smaller screens while the chapter nav and Read/Continue buttons glow with neon motion states.
+- A new "Spotlight feed" sits below the chapter with pacing badges, focus highlights, and glow cards for upcoming `next_paths`, giving the reader a cinematic preview of the AI-generated arc queue.
 
 Ship this branch with `npm run build`/`npm run start` after ensuring `/api/system/status` and `/api/ai/generate` remain wired to the backend tokens so the CTA, slider, and ticker stay lit.

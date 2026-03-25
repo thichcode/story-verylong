@@ -14,6 +14,7 @@ cd frontend
 npm install
 npm run dev
 ```
+Next.js 15.5.14 is required so the latest security patches for server actions and image handling are in place. When deploying, run `npm run build` (or `npm run start` for production) which syncs `stories/` via `scripts/copy_stories.js` before compiling. The build may warn about multiple lockfiles; that can be ignored as long as you are running from `frontend/`.
 Set environment variables for deployment:
 - `NEXT_PUBLIC_API_URL` (e.g. `http://localhost:8000`)
 - `NEXT_PUBLIC_API_TOKEN` (same as `STORY_API_TOKEN`)
@@ -61,6 +62,15 @@ Add the following variables to wire up the local pipeline and auto-runner:
 - `LLAMA_TIMEOUT` – time in seconds to wait for the local llama invocation (default `90`).
 - `LLAMA_MODEL_NAME` – human-readable tag for logging (default `llama.cpp`).
 - `STORY_API_URL` – base URL for `scripts/auto_chapters.py` (defaults to `http://127.0.0.1:8000/api/story/continue`).
+
+## Deployment & E2E smoke tests
+1. Ensure environment variables are set (`STORY_API_TOKEN`, `STORY_API_URL`, `LLAMA_CMD`/`LLAMA_*`, `NEXT_PUBLIC_API_TOKEN`, and `NEXT_PUBLIC_API_URL`).
+2. Start the backend (`STORY_API_TOKEN=... LLAMA_CMD="" uvicorn app.main:APP --port 8000`) and confirm `http://127.0.0.1:8000/docs` responds.
+3. Run `npm run build` inside `frontend/` (it copies stories, compiles Next.js 15.5.14, and emits the new hero/reader bundles).
+4. Trigger `./scripts/auto_chapters.py` once to verify cron logic talks to `/api/story/continue` with the same token and that `stories/*.json` gain a new chapter.
+5. (Optional) Visit `/reader/<storyId>` after pointing `NEXT_PUBLIC_API_URL` at your backend to see the spotlight reader, log ticker, and CTA triggered by `/api/ai/generate`.
+
+> For a printable checklist version, see `DEPLOYMENT.md`.
 
 ## Security
 - fail2ban watches /var/log/story-superlong/auth.log and bans IPs after 3 unauthorized token attempts within 10 minutes (bantime=1h).

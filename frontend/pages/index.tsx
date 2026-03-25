@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, type CSSProperties } from 'react';
+import useSWR from 'swr';
 import Link from 'next/link';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';

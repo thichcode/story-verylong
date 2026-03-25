@@ -9,11 +9,29 @@ const themeOptions = ['midnight','dark','sepia','light'];
 
 type Chapter = { title: string; sections: string[]; cliffhanger?: string };
 
+type NextPath = {
+  id: string;
+  title: string;
+  description: string;
+  focus: string;
+};
+
 type StoryPayload = {
   id: string;
   title: string;
   language?: string;
   chapters: Chapter[] | string[];
+  next_paths?: NextPath[];
+  tags?: string[];
+  pacing?: string;
+  metadata?: {
+    progression?: {
+      pace?: string;
+    };
+    continuity?: {
+      focus?: string;
+    };
+  };
 };
 
 const ReaderPage = () => {
@@ -61,6 +79,9 @@ const ReaderPage = () => {
 
   const currentChapter = chapters[chapterIdx] ?? chapters[0];
   const progressPercent = chapters.length ? Math.round(((chapterIdx + 1) / chapters.length) * 100) : 0;
+  const nextPaths = story?.next_paths ?? [];
+  const spotlightFocus = story?.metadata?.continuity?.focus ?? story?.tags?.[0] ?? story?.title ?? 'spotlight';
+  const pacingLabel = story?.metadata?.progression?.pace ?? story?.pacing ?? 'medium';
 
   const handleNext = () => {
     setChapterIdx((prev) => Math.min(prev + 1, chapters.length - 1));
@@ -143,6 +164,28 @@ const ReaderPage = () => {
           <button onClick={handleNext} disabled={chapterIdx >= chapters.length - 1}>Continue</button>
         </div>
       </main>
+      <section className={styles.readerSpotlight}>
+        <div className={styles.spotlightHeadline}>
+          <span>Spotlight feed</span>
+          <span className={styles.spotlightBadge}>{pacingLabel.toUpperCase()} pace</span>
+        </div>
+        <p className={styles.spotlightLead}>
+          Focus threads through {spotlightFocus}. Chapters glow with a cinematic drift while the pipeline queues the next arcs.
+        </p>
+        <div className={styles.spotlightGrid}>
+          {nextPaths.length ? (
+            nextPaths.slice(0, 3).map((path) => (
+              <article key={path.id} className={styles.spotlightCard}>
+                <h4 className={styles.spotlightTitle}>{path.title}</h4>
+                <p className={styles.spotlightDescription}>{path.description}</p>
+                <span className={styles.spotlightMeta}>{path.focus}</span>
+              </article>
+            ))
+          ) : (
+            <p className={styles.spotlightMuted}>Auto-chapters will generate the next spotlight arc soon.</p>
+          )}
+        </div>
+      </section>
       <nav className={styles.chapterNav}>
         <button onClick={handlePrev} disabled={!chapterIdx}>Prev</button>
         <span>Chapter {chapterIdx + 1} / {chapters.length || '--'}</span>
