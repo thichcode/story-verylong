@@ -1,0 +1,1279 @@
+{
+  "id": "story-xuyen-khong-linh",
+  "title": "Xuyên Không Lôi Linh",
+  "genres": [
+    "xuyên không",
+    "tu tiên",
+    "hệ thống"
+  ],
+  "subGenres": [
+    "bí cảnh",
+    "tông môn",
+    "luyện đan"
+  ],
+  "tone": "sảng văn",
+  "toneTags": [
+    "sảng văn",
+    "hài"
+  ],
+  "powerStyles": [
+    "kiếm đạo",
+    "trận pháp"
+  ],
+  "pacing": "medium",
+  "tags": [
+    "lôi kiếp",
+    "trọng sinh",
+    "hệ thống",
+    "bí cảnh",
+    "ngự thú"
+  ],
+  "summary": "Chapter 1: Lời thề trời mây — ngoại môn Lâm Uyên vừa bị đạp xuống vách, vừa chạm vào lược gỗ cổ khi trời vẫn còn đỏ. Tiếng hệ thống có giọng nữ khàn khàn vang lên: 'Lôi Linh căn, đánh thức đi'. Một tia sáng xuyên vào ngực, truyền vào tay kiếm nhỏ, mềm con, hô hấp quay tít. Cô không phải phàm nhân nữa. Hệ thống bật quest: 'Nhặt linh thạch lửa 3 viên, trấn áp hỏa linh'. Ba đệ tử ngoại môn cười nhạo, và Linh Vân trả lời bằng một cú lửa đánh gãy tay họ. | Chapter 2: Bí cảnh Huyền Vân — truyền thừa đang ở trong mạch nước cũ nhưng bị bảo hộ ba lớp. Hệ thống cho đề bài: đặt trận pháp 'Phong Vân Chuyển' để mở đường, sau đó thu phục thú linh Huyền Vân. Bố cục hài hước — đạo cô quân tử phát ngôn: 'Để tôi nhìn xem ngoại môn đệ tử nào chọc dân chúng'. Linh Vân mò vào, dùng kiếm khí lôi triều để làm phản hồi lửa, hệ thống phát thêm tag 'bí cảnh'. Cuộc chiến kết thúc với cliffhanger: một người khác dùng lôi kiếp rung động mạch nước.",
+  "language": "vi",
+  "focus": "trận pháp",
+  "outline": [
+    "Chapter 1: Lời thề trời mây — ngoại môn phàm nhân bật hệ thống Lôi Linh",
+    "Chapter 2: Bí cảnh Huyền Vân — quest trận pháp, tranh đoạt truyền thừa",
+    "Chapter 3: Lôi kiếp đầu — hệ thống tra khảo linh lực, chí bảo lửa trời",
+    "Chapter 4: Lần phi thăng đầu — đối thoại thánh nhân, mở thread trọng sinh",
+    "Chapter 5: Xuyên Không Lôi Linh — continuation beat 5",
+    "Chapter 6: Xuyên Không Lôi Linh — continuation beat 6",
+    "Chapter 7: Xuyên Không Lôi Linh — continuation beat 7",
+    "Chapter 8: Xuyên Không Lôi Linh — continuation beat 8",
+    "Chapter 9: Xuyên Không Lôi Linh — continuation beat 9",
+    "Chapter 10: Xuyên Không Lôi Linh — continuation beat 10",
+    "Chapter 11: Xuyên Không Lôi Linh — continuation beat 11",
+    "Chapter 12: Xuyên Không Lôi Linh — continuation beat 12",
+    "Chapter 13: Xuyên Không Lôi Linh — continuation beat 13",
+    "Chapter 14: Xuyên Không Lôi Linh — continuation beat 14",
+    "Chapter 15: Xuyên Không Lôi Linh — continuation beat 15",
+    "Chapter 16: Xuyên Không Lôi Linh — continuation beat 16",
+    "Chapter 17: Xuyên Không Lôi Linh — continuation beat 17",
+    "Chapter 18: Xuyên Không Lôi Linh — continuation beat 18",
+    "Chapter 19: Xuyên Không Lôi Linh — continuation beat 19",
+    "Chapter 20: Xuyên Không Lôi Linh — continuation beat 20",
+    "Chapter 21: Xuyên Không Lôi Linh — continuation beat 21",
+    "Chapter 22: Xuyên Không Lôi Linh — continuation beat 22",
+    "Chapter 23: Xuyên Không Lôi Linh — continuation beat 23",
+    "Chapter 24: Xuyên Không Lôi Linh — continuation beat 24",
+    "Chapter 25: Xuyên Không Lôi Linh — continuation beat 25",
+    "Chapter 26: Xuyên Không Lôi Linh — continuation beat 26",
+    "Chapter 27: Xuyên Không Lôi Linh — continuation beat 27",
+    "Chapter 28: Xuyên Không Lôi Linh — continuation beat 28",
+    "Chapter 29: Xuyên Không Lôi Linh — continuation beat 29",
+    "Chapter 30: Xuyên Không Lôi Linh — continuation beat 30",
+    "Chapter 31: Xuyên Không Lôi Linh — continuation beat 31",
+    "Chapter 32: Xuyên Không Lôi Linh — continuation beat 32",
+    "Chapter 33: Xuyên Không Lôi Linh — continuation beat 33",
+    "Chapter 34: Xuyên Không Lôi Linh — continuation beat 34",
+    "Chapter 35: Xuyên Không Lôi Linh — continuation beat 35",
+    "Chapter 36: Xuyên Không Lôi Linh — continuation beat 36",
+    "Chapter 37: Xuyên Không Lôi Linh — continuation beat 37",
+    "Chapter 38: Xuyên Không Lôi Linh — continuation beat 38",
+    "Chapter 39: Xuyên Không Lôi Linh — continuation beat 39",
+    "Chapter 40: Xuyên Không Lôi Linh — continuation beat 40",
+    "Chapter 41: Xuyên Không Lôi Linh — continuation beat 41",
+    "Chapter 42: Xuyên Không Lôi Linh — continuation beat 42",
+    "Chapter 43: Xuyên Không Lôi Linh — continuation beat 43",
+    "Chapter 44: Xuyên Không Lôi Linh — continuation beat 44",
+    "Chapter 45: Xuyên Không Lôi Linh — continuation beat 45",
+    "Chapter 46: Xuyên Không Lôi Linh — continuation beat 46",
+    "Chapter 47: Xuyên Không Lôi Linh — continuation beat 47",
+    "Chapter 48: Xuyên Không Lôi Linh — continuation beat 48",
+    "Chapter 49: Xuyên Không Lôi Linh — continuation beat 49",
+    "Chapter 50: Xuyên Không Lôi Linh — continuation beat 50",
+    "Chapter 51: Xuyên Không Lôi Linh — continuation beat 51",
+    "Chapter 52: Xuyên Không Lôi Linh — continuation beat 52",
+    "Chapter 53: Xuyên Không Lôi Linh — continuation beat 53",
+    "Chapter 54: Xuyên Không Lôi Linh — continuation beat 54",
+    "Chapter 55: Xuyên Không Lôi Linh — continuation beat 55",
+    "Chapter 56: Xuyên Không Lôi Linh — continuation beat 56",
+    "Chapter 57: Xuyên Không Lôi Linh — continuation beat 57",
+    "Chapter 58: Xuyên Không Lôi Linh — continuation beat 58",
+    "Chapter 59: Xuyên Không Lôi Linh — continuation beat 59",
+    "Chapter 60: Xuyên Không Lôi Linh — continuation beat 60",
+    "Chapter 61: Xuyên Không Lôi Linh — continuation beat 61",
+    "Chapter 62: Xuyên Không Lôi Linh — continuation beat 62",
+    "Chapter 63: Xuyên Không Lôi Linh — continuation beat 63",
+    "Chapter 64: Xuyên Không Lôi Linh — continuation beat 64",
+    "Chapter 65: Xuyên Không Lôi Linh — continuation beat 65",
+    "Chapter 66: Xuyên Không Lôi Linh — continuation beat 66",
+    "Chapter 67: Xuyên Không Lôi Linh — continuation beat 67",
+    "Chapter 68: Xuyên Không Lôi Linh — continuation beat 68",
+    "Chapter 69: Xuyên Không Lôi Linh — continuation beat 69",
+    "Chapter 70: Xuyên Không Lôi Linh — continuation beat 70",
+    "Chapter 71: Xuyên Không Lôi Linh — continuation beat 71",
+    "Chapter 72: Xuyên Không Lôi Linh — continuation beat 72",
+    "Chapter 73: Xuyên Không Lôi Linh — continuation beat 73",
+    "Chapter 74: Xuyên Không Lôi Linh — continuation beat 74",
+    "Chapter 75: Xuyên Không Lôi Linh — continuation beat 75",
+    "Chapter 76: Xuyên Không Lôi Linh — continuation beat 76",
+    "Chapter 77: Xuyên Không Lôi Linh — continuation beat 77",
+    "Chapter 78: Xuyên Không Lôi Linh — continuation beat 78",
+    "Chapter 79: Xuyên Không Lôi Linh — continuation beat 79",
+    "Chapter 80: Xuyên Không Lôi Linh — continuation beat 80",
+    "Chapter 81: Xuyên Không Lôi Linh — continuation beat 81",
+    "Chapter 82: Xuyên Không Lôi Linh — continuation beat 82",
+    "Chapter 83: Xuyên Không Lôi Linh — continuation beat 83",
+    "Chapter 84: Xuyên Không Lôi Linh — continuation beat 84",
+    "Chapter 85: Xuyên Không Lôi Linh — continuation beat 85",
+    "Chapter 86: Xuyên Không Lôi Linh — continuation beat 86",
+    "Chapter 87: Xuyên Không Lôi Linh — continuation beat 87",
+    "Chapter 88: Xuyên Không Lôi Linh — continuation beat 88",
+    "Chapter 89: Xuyên Không Lôi Linh — continuation beat 89",
+    "Chapter 90: Xuyên Không Lôi Linh — continuation beat 90",
+    "Chapter 91: Xuyên Không Lôi Linh — continuation beat 91",
+    "Chapter 92: Xuyên Không Lôi Linh — continuation beat 92",
+    "Chapter 93: Xuyên Không Lôi Linh — continuation beat 93",
+    "Chapter 94: Xuyên Không Lôi Linh — continuation beat 94",
+    "Chapter 95: Xuyên Không Lôi Linh — continuation beat 95",
+    "Chapter 96: Xuyên Không Lôi Linh — continuation beat 96",
+    "Chapter 97: Xuyên Không Lôi Linh — continuation beat 97",
+    "Chapter 98: Xuyên Không Lôi Linh — continuation beat 98",
+    "Chapter 99: Xuyên Không Lôi Linh — continuation beat 99",
+    "Chapter 100: Xuyên Không Lôi Linh — continuation beat 100",
+    "Chapter 101: Xuyên Không Lôi Linh — continuation beat 101",
+    "Chapter 102: Xuyên Không Lôi Linh — continuation beat 102",
+    "Chapter 103: Xuyên Không Lôi Linh — continuation beat 103",
+    "Chapter 104: Xuyên Không Lôi Linh — continuation beat 104",
+    "Chapter 105: Xuyên Không Lôi Linh — continuation beat 105",
+    "Chapter 106: Xuyên Không Lôi Linh — continuation beat 106",
+    "Chapter 107: Xuyên Không Lôi Linh — continuation beat 107",
+    "Chapter 108: Xuyên Không Lôi Linh — continuation beat 108",
+    "Chapter 109: Xuyên Không Lôi Linh — continuation beat 109",
+    "Chapter 110: Xuyên Không Lôi Linh — continuation beat 110",
+    "Chapter 111: Xuyên Không Lôi Linh — continuation beat 111",
+    "Chapter 112: Xuyên Không Lôi Linh — continuation beat 112",
+    "Chapter 113: Xuyên Không Lôi Linh — continuation beat 113",
+    "Chapter 114: Xuyên Không Lôi Linh — continuation beat 114",
+    "Chapter 115: Xuyên Không Lôi Linh — continuation beat 115",
+    "Chapter 116: Xuyên Không Lôi Linh — continuation beat 116",
+    "Chapter 117: Xuyên Không Lôi Linh — continuation beat 117",
+    "Chapter 118: Xuyên Không Lôi Linh — continuation beat 118",
+    "Chapter 119: Xuyên Không Lôi Linh — continuation beat 119",
+    "Chapter 120: Xuyên Không Lôi Linh — continuation beat 120",
+    "Chapter 121: Xuyên Không Lôi Linh — continuation beat 121",
+    "Chapter 122: Xuyên Không Lôi Linh — continuation beat 122",
+    "Chapter 123: Xuyên Không Lôi Linh — continuation beat 123",
+    "Chapter 124: Xuyên Không Lôi Linh — continuation beat 124",
+    "Chapter 125: Xuyên Không Lôi Linh — continuation beat 125",
+    "Chapter 126: Xuyên Không Lôi Linh — continuation beat 126",
+    "Chapter 127: Xuyên Không Lôi Linh — continuation beat 127",
+    "Chapter 128: Xuyên Không Lôi Linh — continuation beat 128",
+    "Chapter 129: Xuyên Không Lôi Linh — continuation beat 129"
+  ],
+  "chapters": [
+    {
+      "title": "Chapter 1",
+      "sections": [
+        "Chapter 1: Lời thề trời mây — ngoại môn Lâm Uyên vừa bị đạp xuống vách, vừa chạm vào lược gỗ cổ khi trời vẫn còn đỏ. Tiếng hệ thống có giọng nữ khàn khàn vang lên: 'Lôi Linh căn, đánh thức đi'. Một tia sáng xuyên vào ngực, truyền vào tay kiếm nhỏ, mềm con, hô hấp quay tít. Cô không phải phàm nhân nữa. Hệ thống bật quest: 'Nhặt linh thạch lửa 3 viên, trấn áp hỏa linh'. Ba đệ tử ngoại môn cười nhạo, và Linh Vân trả lời bằng một cú lửa đánh gãy tay họ."
+      ],
+      "cliffhanger": "Chapter 1: Lời thề trời mây — ngoại môn Lâm Uyên vừa bị đạp xuống vách, vừa chạm vào lược gỗ cổ khi trời vẫn còn đỏ. Tiếng hệ thống có giọng nữ khàn khàn vang lên: 'Lôi Linh căn, đánh thức đi'. Một tia sáng xuyên vào ngực, truyền vào tay kiếm nhỏ, mềm con, hô hấp quay tít. Cô không phải phàm nhân nữa. Hệ thống bật quest: 'Nhặt linh thạch lửa 3 viên, trấn áp hỏa linh'. Ba đệ tử ngoại môn cười nhạo, và Linh Vân trả lời bằng một cú lửa đánh gãy tay họ."
+    },
+    {
+      "title": "Chapter 2",
+      "sections": [
+        "Chapter 2: Bí cảnh Huyền Vân — truyền thừa đang ở trong mạch nước cũ nhưng bị bảo hộ ba lớp. Hệ thống cho đề bài: đặt trận pháp 'Phong Vân Chuyển' để mở đường, sau đó thu phục thú linh Huyền Vân. Bố cục hài hước — đạo cô quân tử phát ngôn: 'Để tôi nhìn xem ngoại môn đệ tử nào chọc dân chúng'. Linh Vân mò vào, dùng kiếm khí lôi triều để làm phản hồi lửa, hệ thống phát thêm tag 'bí cảnh'. Cuộc chiến kết thúc với cliffhanger: một người khác dùng lôi kiếp rung động mạch nước."
+      ],
+      "cliffhanger": "Chapter 2: Bí cảnh Huyền Vân — truyền thừa đang ở trong mạch nước cũ nhưng bị bảo hộ ba lớp. Hệ thống cho đề bài: đặt trận pháp 'Phong Vân Chuyển' để mở đường, sau đó thu phục thú linh Huyền Vân. Bố cục hài hước — đạo cô quân tử phát ngôn: 'Để tôi nhìn xem ngoại môn đệ tử nào chọc dân chúng'. Linh Vân mò vào, dùng kiếm khí lôi triều để làm phản hồi lửa, hệ thống phát thêm tag 'bí cảnh'. Cuộc chiến kết thúc với cliffhanger: một người khác dùng lôi kiếp rung động mạch nước."
+    },
+    {
+      "title": "Chapter 3",
+      "sections": [
+        "Chapter 3: Lôi kiếp đầu — Hệ thống mở 'chiến cảnh lôi kiếp'. Linh Vân cần linh lực, thân thể, thần hồn và kinh mạch sạch. Cô bị triệu Vô Kỵ (đệ tử nội môn) ép, và một tâm ma bùng nổ, tạo ra ánh lửa giống hạt thiều. Hệ thống báo 'constellation alignment'. Cô dùng trận pháp triệu phục lôi thú, được thiên đạo buff. Chương dừng với lôi kiếp sắp nổ, hệ thống thèm hỏi 'tiếp tục phi thăng?' và chèn hình ảnh trọng sinh."
+      ],
+      "cliffhanger": "Chapter 3: Lôi kiếp đầu — Hệ thống mở 'chiến cảnh lôi kiếp'. Linh Vân cần linh lực, thân thể, thần hồn và kinh mạch sạch. Cô bị triệu Vô Kỵ (đệ tử nội môn) ép, và một tâm ma bùng nổ, tạo ra ánh lửa giống hạt thiều. Hệ thống báo 'constellation alignment'. Cô dùng trận pháp triệu phục lôi thú, được thiên đạo buff. Chương dừng với lôi kiếp sắp nổ, hệ thống thèm hỏi 'tiếp tục phi thăng?' và chèn hình ảnh trọng sinh."
+    },
+    {
+      "title": "Chapter 4",
+      "sections": [
+        "Chapter 4: Lần phi thăng đầu — sau lôi kiếp , ngoại môn có dấu hiệu chuyển sinh. Linh Vân quyết định dùng khí vận 'nghịch thiên cải mệnh'. Tông môn bấy giờ biểu quyết: bạn được thăng cấp, nhưng phải hi sinh linh lực, phải chấp nhận tông môn khác. Chương kết với hook: vừa định phi thăng thì một văn tự xuất hiện: 'Thiên mệnh đã ghi: ngươi là người về sau sẽ phá hệ thống'."
+      ],
+      "cliffhanger": "Chapter 4: Lần phi thăng đầu — sau lôi kiếp , ngoại môn có dấu hiệu chuyển sinh. Linh Vân quyết định dùng khí vận 'nghịch thiên cải mệnh'. Tông môn bấy giờ biểu quyết: bạn được thăng cấp, nhưng phải hi sinh linh lực, phải chấp nhận tông môn khác. Chương kết với hook: vừa định phi thăng thì một văn tự xuất hiện: 'Thiên mệnh đã ghi: ngươi là người về sau sẽ phá hệ thống'."
+    },
+    {
+      "title": "Chapter 5",
+      "sections": [
+        "Setup: Chapter 5: Xuyên Không Lôi Linh — continuation beat 5. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 6",
+      "sections": [
+        "Setup: Chapter 6: Xuyên Không Lôi Linh — continuation beat 6. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 7",
+      "sections": [
+        "Setup: Chapter 7: Xuyên Không Lôi Linh — continuation beat 7. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 8",
+      "sections": [
+        "Setup: Chapter 8: Xuyên Không Lôi Linh — continuation beat 8. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 9",
+      "sections": [
+        "Setup: Chapter 9: Xuyên Không Lôi Linh — continuation beat 9. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 10",
+      "sections": [
+        "Setup: Chapter 10: Xuyên Không Lôi Linh — continuation beat 10. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 11",
+      "sections": [
+        "Setup: Chapter 11: Xuyên Không Lôi Linh — continuation beat 11. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 12",
+      "sections": [
+        "Setup: Chapter 12: Xuyên Không Lôi Linh — continuation beat 12. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 13",
+      "sections": [
+        "Setup: Chapter 13: Xuyên Không Lôi Linh — continuation beat 13. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 14",
+      "sections": [
+        "Setup: Chapter 14: Xuyên Không Lôi Linh — continuation beat 14. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 15",
+      "sections": [
+        "Setup: Chapter 15: Xuyên Không Lôi Linh — continuation beat 15. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 16",
+      "sections": [
+        "Setup: Chapter 16: Xuyên Không Lôi Linh — continuation beat 16. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 17",
+      "sections": [
+        "Setup: Chapter 17: Xuyên Không Lôi Linh — continuation beat 17. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 18",
+      "sections": [
+        "Setup: Chapter 18: Xuyên Không Lôi Linh — continuation beat 18. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 19",
+      "sections": [
+        "Setup: Chapter 19: Xuyên Không Lôi Linh — continuation beat 19. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 20",
+      "sections": [
+        "Setup: Chapter 20: Xuyên Không Lôi Linh — continuation beat 20. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 21",
+      "sections": [
+        "Setup: Chapter 21: Xuyên Không Lôi Linh — continuation beat 21. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 22",
+      "sections": [
+        "Setup: Chapter 22: Xuyên Không Lôi Linh — continuation beat 22. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 23",
+      "sections": [
+        "Setup: Chapter 23: Xuyên Không Lôi Linh — continuation beat 23. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 24",
+      "sections": [
+        "Setup: Chapter 24: Xuyên Không Lôi Linh — continuation beat 24. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 25",
+      "sections": [
+        "Setup: Chapter 25: Xuyên Không Lôi Linh — continuation beat 25. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 26",
+      "sections": [
+        "Setup: Chapter 26: Xuyên Không Lôi Linh — continuation beat 26. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 27",
+      "sections": [
+        "Setup: Chapter 27: Xuyên Không Lôi Linh — continuation beat 27. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 28",
+      "sections": [
+        "Setup: Chapter 28: Xuyên Không Lôi Linh — continuation beat 28. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 29",
+      "sections": [
+        "Setup: Chapter 29: Xuyên Không Lôi Linh — continuation beat 29. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 30",
+      "sections": [
+        "Setup: Chapter 30: Xuyên Không Lôi Linh — continuation beat 30. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 31",
+      "sections": [
+        "Setup: Chapter 31: Xuyên Không Lôi Linh — continuation beat 31. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 32",
+      "sections": [
+        "Setup: Chapter 32: Xuyên Không Lôi Linh — continuation beat 32. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 33",
+      "sections": [
+        "Setup: Chapter 33: Xuyên Không Lôi Linh — continuation beat 33. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 34",
+      "sections": [
+        "Setup: Chapter 34: Xuyên Không Lôi Linh — continuation beat 34. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 35",
+      "sections": [
+        "Setup: Chapter 35: Xuyên Không Lôi Linh — continuation beat 35. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 36",
+      "sections": [
+        "Setup: Chapter 36: Xuyên Không Lôi Linh — continuation beat 36. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 37",
+      "sections": [
+        "Setup: Chapter 37: Xuyên Không Lôi Linh — continuation beat 37. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 38",
+      "sections": [
+        "Setup: Chapter 38: Xuyên Không Lôi Linh — continuation beat 38. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 39",
+      "sections": [
+        "Setup: Chapter 39: Xuyên Không Lôi Linh — continuation beat 39. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 40",
+      "sections": [
+        "Setup: Chapter 40: Xuyên Không Lôi Linh — continuation beat 40. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 41",
+      "sections": [
+        "Setup: Chapter 41: Xuyên Không Lôi Linh — continuation beat 41. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 42",
+      "sections": [
+        "Setup: Chapter 42: Xuyên Không Lôi Linh — continuation beat 42. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 43",
+      "sections": [
+        "Setup: Chapter 43: Xuyên Không Lôi Linh — continuation beat 43. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 44",
+      "sections": [
+        "Setup: Chapter 44: Xuyên Không Lôi Linh — continuation beat 44. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 45",
+      "sections": [
+        "Setup: Chapter 45: Xuyên Không Lôi Linh — continuation beat 45. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 46",
+      "sections": [
+        "Setup: Chapter 46: Xuyên Không Lôi Linh — continuation beat 46. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 47",
+      "sections": [
+        "Setup: Chapter 47: Xuyên Không Lôi Linh — continuation beat 47. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 48",
+      "sections": [
+        "Setup: Chapter 48: Xuyên Không Lôi Linh — continuation beat 48. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 49",
+      "sections": [
+        "Setup: Chapter 49: Xuyên Không Lôi Linh — continuation beat 49. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 50",
+      "sections": [
+        "Setup: Chapter 50: Xuyên Không Lôi Linh — continuation beat 50. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 51",
+      "sections": [
+        "Setup: Chapter 51: Xuyên Không Lôi Linh — continuation beat 51. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 52",
+      "sections": [
+        "Setup: Chapter 52: Xuyên Không Lôi Linh — continuation beat 52. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 53",
+      "sections": [
+        "Setup: Chapter 53: Xuyên Không Lôi Linh — continuation beat 53. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 54",
+      "sections": [
+        "Setup: Chapter 54: Xuyên Không Lôi Linh — continuation beat 54. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 55",
+      "sections": [
+        "Setup: Chapter 55: Xuyên Không Lôi Linh — continuation beat 55. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 56",
+      "sections": [
+        "Setup: Chapter 56: Xuyên Không Lôi Linh — continuation beat 56. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 57",
+      "sections": [
+        "Setup: Chapter 57: Xuyên Không Lôi Linh — continuation beat 57. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 58",
+      "sections": [
+        "Setup: Chapter 58: Xuyên Không Lôi Linh — continuation beat 58. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 59",
+      "sections": [
+        "Setup: Chapter 59: Xuyên Không Lôi Linh — continuation beat 59. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 60",
+      "sections": [
+        "Setup: Chapter 60: Xuyên Không Lôi Linh — continuation beat 60. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 61",
+      "sections": [
+        "Setup: Chapter 61: Xuyên Không Lôi Linh — continuation beat 61. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 62",
+      "sections": [
+        "Setup: Chapter 62: Xuyên Không Lôi Linh — continuation beat 62. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 63",
+      "sections": [
+        "Setup: Chapter 63: Xuyên Không Lôi Linh — continuation beat 63. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 64",
+      "sections": [
+        "Setup: Chapter 64: Xuyên Không Lôi Linh — continuation beat 64. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 65",
+      "sections": [
+        "Setup: Chapter 65: Xuyên Không Lôi Linh — continuation beat 65. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 66",
+      "sections": [
+        "Setup: Chapter 66: Xuyên Không Lôi Linh — continuation beat 66. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 67",
+      "sections": [
+        "Setup: Chapter 67: Xuyên Không Lôi Linh — continuation beat 67. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 68",
+      "sections": [
+        "Setup: Chapter 68: Xuyên Không Lôi Linh — continuation beat 68. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 69",
+      "sections": [
+        "Setup: Chapter 69: Xuyên Không Lôi Linh — continuation beat 69. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 70",
+      "sections": [
+        "Setup: Chapter 70: Xuyên Không Lôi Linh — continuation beat 70. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 71",
+      "sections": [
+        "Setup: Chapter 71: Xuyên Không Lôi Linh — continuation beat 71. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 72",
+      "sections": [
+        "Setup: Chapter 72: Xuyên Không Lôi Linh — continuation beat 72. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 73",
+      "sections": [
+        "Setup: Chapter 73: Xuyên Không Lôi Linh — continuation beat 73. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 74",
+      "sections": [
+        "Setup: Chapter 74: Xuyên Không Lôi Linh — continuation beat 74. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 75",
+      "sections": [
+        "Setup: Chapter 75: Xuyên Không Lôi Linh — continuation beat 75. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 76",
+      "sections": [
+        "Setup: Chapter 76: Xuyên Không Lôi Linh — continuation beat 76. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 77",
+      "sections": [
+        "Setup: Chapter 77: Xuyên Không Lôi Linh — continuation beat 77. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 78",
+      "sections": [
+        "Setup: Chapter 78: Xuyên Không Lôi Linh — continuation beat 78. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 79",
+      "sections": [
+        "Setup: Chapter 79: Xuyên Không Lôi Linh — continuation beat 79. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 80",
+      "sections": [
+        "Setup: Chapter 80: Xuyên Không Lôi Linh — continuation beat 80. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 81",
+      "sections": [
+        "Setup: Chapter 81: Xuyên Không Lôi Linh — continuation beat 81. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 82",
+      "sections": [
+        "Setup: Chapter 82: Xuyên Không Lôi Linh — continuation beat 82. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 83",
+      "sections": [
+        "Setup: Chapter 83: Xuyên Không Lôi Linh — continuation beat 83. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 84",
+      "sections": [
+        "Setup: Chapter 84: Xuyên Không Lôi Linh — continuation beat 84. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 85",
+      "sections": [
+        "Setup: Chapter 85: Xuyên Không Lôi Linh — continuation beat 85. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 86",
+      "sections": [
+        "Setup: Chapter 86: Xuyên Không Lôi Linh — continuation beat 86. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 87",
+      "sections": [
+        "Setup: Chapter 87: Xuyên Không Lôi Linh — continuation beat 87. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 88",
+      "sections": [
+        "Setup: Chapter 88: Xuyên Không Lôi Linh — continuation beat 88. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 89",
+      "sections": [
+        "Setup: Chapter 89: Xuyên Không Lôi Linh — continuation beat 89. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 90",
+      "sections": [
+        "Setup: Chapter 90: Xuyên Không Lôi Linh — continuation beat 90. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 91",
+      "sections": [
+        "Setup: Chapter 91: Xuyên Không Lôi Linh — continuation beat 91. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 92",
+      "sections": [
+        "Setup: Chapter 92: Xuyên Không Lôi Linh — continuation beat 92. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 93",
+      "sections": [
+        "Setup: Chapter 93: Xuyên Không Lôi Linh — continuation beat 93. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 94",
+      "sections": [
+        "Setup: Chapter 94: Xuyên Không Lôi Linh — continuation beat 94. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 95",
+      "sections": [
+        "Setup: Chapter 95: Xuyên Không Lôi Linh — continuation beat 95. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 96",
+      "sections": [
+        "Setup: Chapter 96: Xuyên Không Lôi Linh — continuation beat 96. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 97",
+      "sections": [
+        "Setup: Chapter 97: Xuyên Không Lôi Linh — continuation beat 97. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 98",
+      "sections": [
+        "Setup: Chapter 98: Xuyên Không Lôi Linh — continuation beat 98. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 99",
+      "sections": [
+        "Setup: Chapter 99: Xuyên Không Lôi Linh — continuation beat 99. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 100",
+      "sections": [
+        "Setup: Chapter 100: Xuyên Không Lôi Linh — continuation beat 100. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 101",
+      "sections": [
+        "Setup: Chapter 101: Xuyên Không Lôi Linh — continuation beat 101. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 102",
+      "sections": [
+        "Setup: Chapter 102: Xuyên Không Lôi Linh — continuation beat 102. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 103",
+      "sections": [
+        "Setup: Chapter 103: Xuyên Không Lôi Linh — continuation beat 103. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 104",
+      "sections": [
+        "Setup: Chapter 104: Xuyên Không Lôi Linh — continuation beat 104. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 105",
+      "sections": [
+        "Setup: Chapter 105: Xuyên Không Lôi Linh — continuation beat 105. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 106",
+      "sections": [
+        "Setup: Chapter 106: Xuyên Không Lôi Linh — continuation beat 106. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 107",
+      "sections": [
+        "Setup: Chapter 107: Xuyên Không Lôi Linh — continuation beat 107. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 108",
+      "sections": [
+        "Setup: Chapter 108: Xuyên Không Lôi Linh — continuation beat 108. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 109",
+      "sections": [
+        "Setup: Chapter 109: Xuyên Không Lôi Linh — continuation beat 109. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 110",
+      "sections": [
+        "Setup: Chapter 110: Xuyên Không Lôi Linh — continuation beat 110. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 111",
+      "sections": [
+        "Setup: Chapter 111: Xuyên Không Lôi Linh — continuation beat 111. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 112",
+      "sections": [
+        "Setup: Chapter 112: Xuyên Không Lôi Linh — continuation beat 112. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 113",
+      "sections": [
+        "Setup: Chapter 113: Xuyên Không Lôi Linh — continuation beat 113. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 114",
+      "sections": [
+        "Setup: Chapter 114: Xuyên Không Lôi Linh — continuation beat 114. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 115",
+      "sections": [
+        "Setup: Chapter 115: Xuyên Không Lôi Linh — continuation beat 115. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 116",
+      "sections": [
+        "Setup: Chapter 116: Xuyên Không Lôi Linh — continuation beat 116. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 117",
+      "sections": [
+        "Setup: Chapter 117: Xuyên Không Lôi Linh — continuation beat 117. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 118",
+      "sections": [
+        "Setup: Chapter 118: Xuyên Không Lôi Linh — continuation beat 118. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 119",
+      "sections": [
+        "Setup: Chapter 119: Xuyên Không Lôi Linh — continuation beat 119. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 120",
+      "sections": [
+        "Setup: Chapter 120: Xuyên Không Lôi Linh — continuation beat 120. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 121",
+      "sections": [
+        "Setup: Chapter 121: Xuyên Không Lôi Linh — continuation beat 121. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 122",
+      "sections": [
+        "Setup: Chapter 122: Xuyên Không Lôi Linh — continuation beat 122. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 123",
+      "sections": [
+        "Setup: Chapter 123: Xuyên Không Lôi Linh — continuation beat 123. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 124",
+      "sections": [
+        "Setup: Chapter 124: Xuyên Không Lôi Linh — continuation beat 124. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 125",
+      "sections": [
+        "Setup: Chapter 125: Xuyên Không Lôi Linh — continuation beat 125. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 126",
+      "sections": [
+        "Setup: Chapter 126: Xuyên Không Lôi Linh — continuation beat 126. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through lôi phá. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through lôi phá. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through lôi phá. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 127",
+      "sections": [
+        "Setup: Chapter 127: Xuyên Không Lôi Linh — continuation beat 127. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 128",
+      "sections": [
+        "Setup: Chapter 128: Xuyên Không Lôi Linh — continuation beat 128. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through tiến cảnh. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through tiến cảnh. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through tiến cảnh. No answer yet arrives, and every door within the scene remains locked."
+    },
+    {
+      "title": "Chapter 129",
+      "sections": [
+        "Setup: Chapter 129: Xuyên Không Lôi Linh — continuation beat 129. A restless wind sketches outlines across the stage, pulsing with unnamed intent. Focus threads the narrative through trận pháp. Cameras drift across gestures, letting the viewer absorb key stakes.",
+        "Escalation: Tension coils with slow heat, daring the players to stretch further than comfort allows. Focus threads the narrative through trận pháp. Allies and rivals move like choreography, each beat stretching the drama longer."
+      ],
+      "cliffhanger": "Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked."
+    }
+  ],
+  "chapterDetails": [
+    {
+      "title": "Chapter 1",
+      "sections": [
+        "Khởi động hệ thống Lôi Linh",
+        "Trận pháp Hỏa Mạch",
+        "Đè bẹp cười nhạo"
+      ],
+      "cliffhanger": "Linh Vân vừa mở mắt đã thấy hệ thống đếm ngược lôi kiếp"
+    },
+    {
+      "title": "Chapter 2",
+      "sections": [
+        "Bí cảnh Huyền Vân",
+        "Trận pháp phong",
+        "Đối thủ mới"
+      ],
+      "cliffhanger": "Ai đó sử dụng lôi kiếp thứ nhất"
+    },
+    {
+      "title": "Chapter 3",
+      "sections": [
+        "Hệ thống tra khảo",
+        "Tâm ma bộc phát",
+        "Lôi thú hộ pháp"
+      ],
+      "cliffhanger": "Thiên đạo gõ cửa hỏi: có chịu đỡ lôi kiếp không?"
+    },
+    {
+      "title": "Chapter 4",
+      "sections": [
+        "Phi thăng đầu",
+        "Khí vận nghịch thiên",
+        "Tiền đồ tông môn"
+      ],
+      "cliffhanger": "Bảng nhiệm vụ ghi: 'Ngươi là kẻ phá hệ thống'"
+    }
+  ],
+  "next_paths": [
+    {
+      "id": "story-xuyen-khong-linh-path-1",
+      "title": "Shadow the dissenting envoy",
+      "description": "Disguises and furtive notes will reveal the pact that could tilt the court. The lingering echo: Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked.",
+      "focus": "trận pháp · dissenting envoy"
+    },
+    {
+      "id": "story-xuyen-khong-linh-path-2",
+      "title": "Uncover the hypernet leak",
+      "description": "Binary rain and forged transmissions point to a traitor near the core. The lingering echo: Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked.",
+      "focus": "trận pháp · hypernet leak"
+    },
+    {
+      "id": "story-xuyen-khong-linh-path-3",
+      "title": "Barter for the midnight ledger",
+      "description": "Cryptic ledgers whisper of betrayals yet unwritten beneath neon skylines. The lingering echo: Cliffhanger: The air crystalizes, freezing a single question in the throat that will not be answered yet. Focus threads the narrative through trận pháp. No answer yet arrives, and every door within the scene remains locked.",
+      "focus": "trận pháp · midnight ledger"
+    }
+  ],
+  "world": {
+    "tier": "phàm vực",
+    "setting": "tiên hiệp cổ đại",
+    "powerSystem": "cultivation_standard_v1"
+  },
+  "protagonist": {
+    "origin": "người hiện đại xuyên không",
+    "talent": "lôi linh căn",
+    "bodyType": "phàm thể",
+    "primaryPath": "kiếm tu",
+    "secondaryPath": "trận pháp",
+    "luck": "đại khí vận"
+  },
+  "progression": {
+    "startRealm": "Luyện Khí tầng 3",
+    "targetRealm": "Nguyên Anh",
+    "pace": "medium"
+  },
+  "features": {
+    "systemMode": true,
+    "romanceLevel": 1,
+    "comedyLevel": 2,
+    "darknessLevel": 1
+  },
+  "genre": "Fantasy",
+  "created_at": "2026-03-24T00:15:01.186717Z"
+}

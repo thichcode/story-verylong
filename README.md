@@ -27,10 +27,21 @@ Use `scripts/story_pipeline.py` to generate a sample story and save it under `st
 - `/api/system/cultivation` exposes the same configuration so the UI or prompt helpers can reuse it.
 - Run `scripts/prompt_builder.py` to preview the system prompt that glues styles, tags, progression, and feature knobs together.
 
+### Local LLaMA pipeline
+- Set `LLAMA_CMD` so it includes the placeholder `<<PROMPT>>`; the environment string is inserted verbatim into the llama.cpp CLI (e.g. `LLAMA_CMD="./llama.cpp/main -m ./models/ggml-...-q5_0.bin -p \"<<PROMPT>>\" --n_predict 512"`).
+- Optionally tune `LLAMA_TIMEOUT` (default `90`) and `LLAMA_MODEL_NAME` (default `llama.cpp`). The generator will default to a codex-style fallback when the local model fails.
+- Run `python scripts/story_pipeline.py generate --title "Storm of Jade" --chapters 6 --tone mysterious` to create a story; use `scripts/story_pipeline.py continue --story-id story-123 --chapters 1` to append chapters.
+- Each run stores a `generation` record (prompt, chapter count, duration, fallback flag) inside the saved JSON and appends a human-readable entry to `logs/pipeline.log`.
+
 ### Auto chapter refresh
 - `scripts/auto_chapters.py` walks every stored story and appends a single continuation chapter (up to 24 chapters total).
 - Each continuation mirrors the story's pace, focus, tone tags, and feature layers while respecting the cultivation progression rules.
-- Schedule this script via cron if you want the gallery to stay alive even when no mock user is pressing "continue".
+- Schedule this script via cron if you want the gallery to stay alive even when no mock user is pressing "continue". The script now reads `STORY_API_TOKEN` and `STORY_API_URL` from the environment to stay in sync with deployed tokens.
+
+### Scheduling auto chapters
+- Run `STORY_API_TOKEN=... STORY_API_URL=http://localhost:8000/api/story/continue ./scripts/setup_auto_chapters_cron.sh` to install a `*/15 * * * *` entry that calls `scripts/auto_chapters.py`, logs to `logs/auto_chapters.log`, and keeps the cron job idempotent.
+- The installer rejects missing tokens, refreshes any existing entry that targets the script, and prints the active cron line so you can verify with `crontab -l`.
+- Because the cron entry keeps your llama pipeline local, it will use whatever backend endpoint and token you configure in the environment before installation.
 
 ### Gallery & Favorites
 - The Next.js gallery supports multi-tag filtering, tone/pace selectors, and saved combo presets so readers can pair cultivation, system, and comedy tags.
@@ -43,6 +54,13 @@ Use `scripts/story_pipeline.py` to generate a sample story and save it under `st
 
 ## Configuration
 Copy `.env` and customize tokens/URLs before running services.
+
+Add the following variables to wire up the local pipeline and auto-runner:
+- `LLAMA_CMD` – command string with `<<PROMPT>>` to insert the chapter prompt (e.g. `LLAMA_CMD="./llama.cpp/main -m ./models/ggml-gpt4all-j.bin -p \"<<PROMPT>>\" --n_predict 512"`).
+- `LLAMA_PROMPT_PLACEHOLDER` – override the placeholder token if you prefer something other than `<<PROMPT>>`.
+- `LLAMA_TIMEOUT` – time in seconds to wait for the local llama invocation (default `90`).
+- `LLAMA_MODEL_NAME` – human-readable tag for logging (default `llama.cpp`).
+- `STORY_API_URL` – base URL for `scripts/auto_chapters.py` (defaults to `http://127.0.0.1:8000/api/story/continue`).
 
 ## Security
 - fail2ban watches /var/log/story-superlong/auth.log and bans IPs after 3 unauthorized token attempts within 10 minutes (bantime=1h).
@@ -58,6 +76,12 @@ Copy `.env` and customize tokens/URLs before running services.
 - Sources in `docs/crypto-sources.md` feed `scripts/crypto_thien_thoi.py` for macro news.
 - Feed the resulting signal into your watchlist cron (`scripts/crypto_watchlist_cron.sh` or similar) for alerts.
 
+
+## Telegram model manager command
+- Create a Telegram bot (get bot token + chat id) and set `TELEGRAM_MODEL_MANAGER_TOKEN` and `TELEGRAM_MODEL_MANAGER_CHAT` in the environment (or systemd unit) that runs the skill script.
+- Run `skills/telegram-model-manager/scripts/telegram_model_manager.py` to listen for `/model_manager start|stop <model-id>` commands from that chat and proxy them to `scripts/model_manager.sh`.
+- Make sure the bot user has permission to post in the channel. The script replies with the output of the called command so you can see success or failure in Telegram.
+- Example: `/model_manager start qwen3.5-4b` starts the local model via the same CLI as before.
 ## Auto chapter runner
 - Run `scripts/auto_chapters.py` to append a chapter to every story every 15 minutes (setup via cron/task scheduler).
 - Requires backend running at http://127.0.0.1:8000 with valid STORY_API_TOKEN.
