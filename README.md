@@ -73,6 +73,10 @@ Add the following variables to wire up the local pipeline and auto-runner:
 
 > For a printable checklist version, see `DEPLOYMENT.md`.
 
+## Automatic gallery sync
+- The workflow `sync-stories.yml` rebuilds the frontend whenever files inside `stories/` change: it runs `scripts/copy_stories.js`, builds Next.js 15.5.14, and commits the synced JSON to `frontend/data/stories` so the gallery always mirrors the backend state.
+- You can also run `scripts/deploy_gallery.sh` locally to copy, build, and verify the cinematic home without waiting for CI.
+
 ## Security
 - fail2ban watches /var/log/story-superlong/auth.log and bans IPs after 3 unauthorized token attempts within 10 minutes (bantime=1h).
 - Reverse proxy (TLS/rate-limit) advised before hitting /api/story.

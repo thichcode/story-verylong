@@ -1,0 +1,42 @@
+name: Sync gallery stories
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'stories/**'
+
+jobs:
+  sync-gallery-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Sync story files
+        run: |
+          node ./scripts/copy_stories.js
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm install
+          npm run build
+      - name: Commit synced stories
+        run: |
+          git config user.name "OpenClaw Sync Bot"
+          git config user.email "bot@openclaw.ai"
+          if git status --porcelain | grep -q .; then
+            git add frontend/data/stories
+            git commit -m "Sync stories to frontend data"
+            git push
+          else
+            echo "No synced story changes"
+          fi

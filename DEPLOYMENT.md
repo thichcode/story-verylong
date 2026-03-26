@@ -37,8 +37,10 @@ STORY_API_TOKEN=... STORY_API_URL=http://127.0.0.1:8000/api/story/continue ./scr
 - Run the frontend with `NEXT_PUBLIC_API_URL=http://127.0.0.1:8000 npm run dev` and visit `/`.
 - Click the animated CTA (`Generate Story`) to hit `/api/ai/generate`.
 - Visit `/reader/<story-id>` to confirm the spotlight grid, gradient toolbar, and pipeline ticker render correctly.
+- Run `./scripts/deploy_gallery.sh` to copy stories, rebuild the Next.js bundle, and verify the cinematic UI without manually typing the commands.
 
 ## 6. Post-deploy notes
 - Monitor `logs/auto_chapters.log` for cron output and `logs/pipeline.log` for generation events.
 - If you rotate the story token, rerun the cron installer (it echoes the `*/15 * * * *` command).
 - Keep `next` at 15.5.14 to benefit from all patched vulnerabilities.
+- On GitHub, the `Sync gallery stories` workflow (`.github/workflows/sync-stories.yml`) now runs whenever `stories/` changes: it copies JSON to the frontend data folder, builds the site, and commits the synced files automatically.
